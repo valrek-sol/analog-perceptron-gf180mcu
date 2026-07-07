@@ -33,7 +33,7 @@ L=7e-6
 model=ppolyf_u
 spiceprefix=X
 m=1}
-C {iopin.sym} 270 -400 3 0 {name=p1 lab=VDD}
+C {iopin.sym} 270 -400 3 0 {name=p1 lab=V_ref}
 C {iopin.sym} 370 -130 1 0 {name=p2 lab=VSS}
 C {ipin.sym} 150 -140 0 0 {name=p3 lab=I_in}
 C {ipin.sym} 150 -250 0 0 {name=p4 lab=V_bias}

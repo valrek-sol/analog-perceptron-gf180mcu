@@ -23,9 +23,9 @@ N 220 -180 320 -180 {lab=V_x_p}
 N 660 -180 680 -180 {lab=V_x_n}
 N 680 -180 680 -130 {lab=V_x_n}
 N 220 -130 680 -130 {lab=V_x_n}
-N 120 -580 120 -360 {lab=V_o_n}
-N 380 -460 380 -360 {lab=V_o_p}
-N 860 -580 860 -360 {lab=V_o_p}
+N 120 -580 120 -360 {lab=I_o_n}
+N 380 -460 380 -360 {lab=I_o_p}
+N 860 -580 860 -360 {lab=I_o_p}
 N 240 -300 240 -260 {lab=#net1}
 N 240 -260 360 -260 {lab=#net1}
 N 360 -260 360 -210 {lab=#net1}
@@ -37,15 +37,11 @@ N 20 -330 80 -330 {lab=V_w_p}
 N 900 -330 940 -330 {lab=V_w_p}
 N 520 -50 620 -50 {lab=#net4}
 N 360 -50 460 -50 {lab=#net3}
-N 120 -500 600 -460 {lab=V_o_n}
-N 380 -460 860 -500 {lab=V_o_p}
-N 120 -560 1030 -560 {lab=V_o_n}
-N 860 -520 1030 -520 {lab=V_o_p}
-N 120 -640 860 -640 {lab=VDD}
-N 490 -680 490 -640 {lab=VDD}
+N 120 -500 600 -460 {lab=I_o_n}
+N 380 -460 860 -500 {lab=I_o_p}
 N 360 -150 360 -90 {lab=#net3}
 N 620 -150 620 -90 {lab=#net4}
-N 600 -460 600 -360 {lab=V_o_n}
+N 600 -460 600 -360 {lab=I_o_n}
 N 420 -330 560 -330 {lab=V_w_n}
 N 20 -280 490 -280 {lab=V_w_n}
 N 490 -330 490 -280 {lab=V_w_n}
@@ -177,21 +173,9 @@ L=40e-6
 model=ppolyf_u
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u.sym} 120 -610 0 0 {name=R2
-W=1e-6
-L=20e-6
-model=ppolyf_u
-spiceprefix=X
-m=1}
-C {symbols/ppolyf_u.sym} 860 -610 0 1 {name=R3
-W=1e-6
-L=20e-6
-model=ppolyf_u
-spiceprefix=X
-m=1}
-C {iopin.sym} 490 -680 3 0 {name=p7 lab=VDD}
-C {opin.sym} 1030 -560 0 0 {name=p8 lab=V_o_n}
-C {opin.sym} 1030 -520 0 0 {name=p9 lab=V_o_p}
+C {opin.sym} 120 -580 3 0 {name=p8 lab=I_o_n
+}
+C {opin.sym} 860 -580 3 0 {name=p9 lab=I_o_p}
 C {lab_pin.sym} 380 -330 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
 C {lab_pin.sym} 120 -330 2 0 {name=p11 sig_type=std_logic lab=VSS
@@ -200,8 +184,6 @@ C {lab_pin.sym} 600 -330 2 0 {name=p12 sig_type=std_logic lab=VSS
 }
 C {lab_pin.sym} 860 -330 0 0 {name=p13 sig_type=std_logic lab=VSS
 }
-C {lab_pin.sym} 100 -610 0 0 {name=p14 sig_type=std_logic lab=VSS
-}
 C {lab_pin.sym} 620 -180 0 0 {name=p15 sig_type=std_logic lab=VSS
 }
 C {lab_pin.sym} 620 20 0 0 {name=p16 sig_type=std_logic lab=VSS
@@ -209,8 +191,6 @@ C {lab_pin.sym} 620 20 0 0 {name=p16 sig_type=std_logic lab=VSS
 C {lab_pin.sym} 360 -180 2 0 {name=p17 sig_type=std_logic lab=VSS
 }
 C {lab_pin.sym} 360 20 2 0 {name=p18 sig_type=std_logic lab=VSS
-}
-C {lab_pin.sym} 880 -610 2 0 {name=p19 sig_type=std_logic lab=VSS
 }
 C {lab_pin.sym} 490 -70 1 0 {name=p20 sig_type=std_logic lab=VSS
 }

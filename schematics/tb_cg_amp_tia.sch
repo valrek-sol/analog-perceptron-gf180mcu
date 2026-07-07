@@ -17,7 +17,7 @@ N 570 -300 640 -300 {lab=#net3}
 N 570 -260 600 -260 {lab=0}
 N 600 -260 600 -140 {lab=0}
 C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 420 -280 0 0 {name=x1}
-C {vsource.sym} 640 -170 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
+C {vsource.sym} 640 -170 0 0 {name=V_SUPPLY value=1.25 savecurrent=false}
 C {gnd.sym} 220 -120 0 0 {name=l1 lab=0}
 C {vsource.sym} 120 -170 0 0 {name=V_BIAS value=1 savecurrent=false}
 C {isource.sym} 220 -170 0 0 {name=I_SENSOR value=1u}
