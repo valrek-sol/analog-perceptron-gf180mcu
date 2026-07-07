@@ -9,7 +9,7 @@ This project is made by utilizing GF180mcu PDK, for the 2026 SSCS PICO Chipathon
 A single perceptron in the analog (continuous time) domain, where its weights and biases are programmable. Intended operation is in DC mode, and sensor agnostic as long as it is a current mode sensor. Designed with photodiodes in mind. Basically analog computation, where the computation performed is :
 
 
-![perceptron equation](docs/images/perceptron_eqn.png "Perceptron Equation")
+![perceptron equation](docs/images/perceptron_eqn_no_alpha.png "Perceptron Equation")
 
 Where, 
 F is the activation function (tanh/sigmoid) 
