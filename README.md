@@ -14,17 +14,18 @@ Highlight is that there is no digital, memory elements. The calculation happens 
 
 Main overview of the structure of this repository
 
-* `plots/`: Simulation sweep data and generated figures
-   * `plots/plot_results.py`: Script that generates all figures from sweep data
-   * `plots/*.txt`: Raw ngspice sweep outputs (which are parsed by matplotlib) 
-   * `plots/plots_generated/`: Plots generated from xschem via matplotlib (python)
-* `schematics/`: Xschem sources and testbenches for all blocks
-   * `schematics/cg_amp_tia.sch`: CG-amp shunt-feedback TIA
-   * `schematics/gilbert_multiplier.sch` / `gilbert_multiplier_current.sch`: Gilbert cell multiplier (voltage-mode and current-mode variants)
-   * `schematics/tanh_ota.sch`: Differential amplifier sigmoid/tanh stage
-   * `schematics/perceptron.sch`: Top-level perceptron integration
+
+* [`plots/`](plots/): Simulation sweep data and generated figures
+   * [`plots/plot_results.py`](plots/plot_results.py): Script that generates all figures from sweep data
+   * `plots/*.txt`: Raw ngspice sweep outputs (which are parsed by matplotlib)
+   * [`plots/plots_generated/`](plots/plots_generated/): Plots generated from xschem via matplotlib (python)
+* [`schematics/`](schematics/): Xschem sources and testbenches for all blocks
+   * [`schematics/cg_amp_tia.sch`](schematics/cg_amp_tia.sch): CG-amp shunt-feedback TIA
+   * [`schematics/gilbert_multiplier.sch`](schematics/gilbert_multiplier.sch) / [`gilbert_multiplier_current.sch`](schematics/gilbert_multiplier_current.sch): Gilbert cell multiplier (voltage-mode and current-mode variants)
+   * [`schematics/tanh_ota.sch`](schematics/tanh_ota.sch): Differential amplifier sigmoid/tanh stage
+   * [`schematics/perceptron.sch`](schematics/perceptron.sch): Top-level perceptron integration
    * `schematics/tb_*.sch`: Testbenches for each block above
-   * `schematics/diagrams/`: Exported block/testbench diagrams (PDF) 
+   * [`schematics/diagrams/`](schematics/diagrams/): Exported block/testbench diagrams (PDF)
 
 ## Chipathon Documents & Related
 
