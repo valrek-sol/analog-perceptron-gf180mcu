@@ -48,7 +48,7 @@ C {vsource.sym} 330 -130 0 0 {name=V_TAIL value=1.8 savecurrent=false}
 C {vsource.sym} 20 -130 0 0 {name=V_W_P value=1.65 savecurrent=false}
 C {vsource.sym} 100 -130 0 0 {name=V_W_N value=1.65 savecurrent=false}
 C {gnd.sym} 180 -40 0 0 {name=l1 lab=0}
-C {code.sym} 960 -500 0 0 {name=COMMANDS
+C {code.sym} 220 -510 0 0 {name=COMMANDS
 value="
 .control
   * === Single sweep: baseline transfer curve ===

@@ -23,7 +23,7 @@ N 180 -310 260 -310 {lab=#net4}
 N 20 -350 260 -350 {lab=#net5}
 N 20 -350 20 -240 {lab=#net5}
 C {analog-perceptron-gf180mcu/schematics/tanh_ota.sym} 410 -320 0 0 {name=x1}
-C {devices/code_shown.sym} 910 -380 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} 910 -240 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
@@ -31,7 +31,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 "}
-C {code.sym} 900 -560 0 0 {name=COMMANDS
+C {code_shown.sym} 900 -420 0 0 {name=COMMANDS
 value="
 .control
   dc V_IN_P 1.4 1.9 0.002
