@@ -32,14 +32,23 @@ Main overview of the structure of this repository
 Area estimate is approximately ~300um x 300um currently. 
 
 [Github repo (this repo)](https://github.com/valrek-sol/analog-perceptron-gf180mcu)
+
 [Google Drive containing all below material](https://drive.google.com/drive/folders/1w9kNC-WTRVOlu-ZDq20NobVmB2Sa7vTh?usp=sharing)
+
 [Proposal Slide Link](https://docs.google.com/presentation/d/13eMg_GNvv0nm00do740fxi4ZR1RHCYNasZUUlCRyxGo/edit?usp=sharing)
+
 [Proposal Video Link](https://drive.google.com/file/d/1MZTpp1oeU_d-gKvnwnpxPWE7-ZTWUfAw/view?usp=drive_link)
+
 [Pin Requirement Link](https://docs.google.com/spreadsheets/d/1j0dq9UvAsj5zYBimwCMxk5xVtT9jLV9aKmREzxfqWbw/edit?usp=drive_link)
+
 [Progress tracker Link](https://docs.google.com/spreadsheets/d/1hsH6fOqgu6h7McnxBpZjmTYU_prxYtLpsWHi7i9b4Zk/edit?usp=sharing)
+
 [Schematic Review Slide Link (Compacted)](https://docs.google.com/presentation/d/11Yxg_3VuQzDJLRQqG4vkzuTGyFlSRIocTLgW-DXF2V8/edit?usp=drive_link)
+
 [Schematic Review Slide Link (Full)](https://docs.google.com/presentation/d/1FTLqScoZ_3OFutOgfb5MBX5IrDTujoEfs5XRks5E18U/edit?usp=drive_link)
+
 [Schematic Review Video Link](https://drive.google.com/file/d/1bdpH2OENgyuMhEZ-BPgnGtmW76qQdRpw/view?usp=drive_link)
+
 
 ## Specifications (Target)
 
