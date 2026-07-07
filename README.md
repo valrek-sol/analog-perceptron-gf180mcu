@@ -12,11 +12,12 @@ A single perceptron in the analog (continuous time) domain, where its weights an
 ![perceptron equation](docs/images/perceptron_eqn_no_alpha.png "Perceptron Equation")
 
 Where, 
-F is the activation function (tanh/sigmoid) 
-X1, X2 are input sensor currents (pull down)
-W1,W2 are input weights (voltages) ← “Programmable”
-B is the bias (voltage)
-Y is the output voltage
+
+* F is the activation function (tanh/sigmoid) 
+* X1, X2 are input sensor currents (pull down)
+* W1, W2 are input weights (voltages) ← “Programmable”
+* B is the bias (voltage)
+* Y is the output voltage
 
 ![perceptron sketch](docs/images/perceptron_sketch.png "Sketch of model of a perceptron neuron")
 
