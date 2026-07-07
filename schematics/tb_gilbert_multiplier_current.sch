@@ -51,19 +51,31 @@ C {gnd.sym} 180 -40 0 0 {name=l1 lab=0}
 C {code.sym} 960 -500 0 0 {name=COMMANDS
 value="
 .control
-  * Nested Sweep: 
-  * 1. Sweep Weight (V_W_P) from 1.15V to 2.15V in 10mV steps.
-  * 2. Step Sensor (V_X_P) from 1.10V to 1.30V in 50mV steps.
-  dc V_W_P 1.15 2.15 0.01 V_X_P 1.10 1.30 0.05
-  
-  * Calculate differential output
-  let V_diff_out = v(V_o_p) - v(V_o_n)
-  
-  * Export the family of curves to a text file
-  wrdata /foss/designs/analog-perceptron-gf180mcu/schematics/sweep_4quadrant.txt V_diff_out
-  
-  * Plot the result in the Xschem GUI
-  plot V_diff_out
+  * === Single sweep: baseline transfer curve ===
+  alter V_X_P = 1.30
+  alter V_X_N = 1.20
+  dc V_W_P 1.15 2.15 0.01
+  let V_diff_single = v(V_o_p) - v(V_o_n)
+  plot V_diff_single title \\"Gilbert Multiplier: Single Weight Sweep\\"
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/gilbert_single_sweep.txt V_diff_single
+
+  setplot const
+  * === Family of curves, one clean sweep per V_X_P step ===
+  let n = 0
+  dowhile n <= 4
+    let vxp = 1.10 + n * 0.05
+    alter V_X_P = vxp
+    dc V_W_P 1.15 2.15 0.01
+    let V_diff_fam = v(V_o_p) - v(V_o_n)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/gilbert_family_sweep.txt V_diff_fam
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+
+  alter V_X_P = 1.35
+  alter V_X_N = 1.2
+  alter V_W_P = 1.65
 .endc
 "}
 C {devices/code_shown.sym} 390 -490 0 0 {name=MODELS only_toplevel=true

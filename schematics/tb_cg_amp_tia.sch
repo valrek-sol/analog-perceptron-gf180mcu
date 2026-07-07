@@ -30,12 +30,12 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 "}
-C {code.sym} 740 -420 0 0 {name=COMMANDS
+C {code.sym} 910 -600 0 0 {name=COMMANDS
 value="
 .control
   dc I_SENSOR 0 50u 1u
-  
   let V_out = v(V_out)
-  plot V_out
+  plot V_out title \\"CG-TIA: Sensor Current to Voltage\\"
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/cg_amp_tia_sweep.txt V_out
 .endc
 "}

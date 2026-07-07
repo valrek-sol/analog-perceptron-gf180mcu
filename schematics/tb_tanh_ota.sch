@@ -35,9 +35,9 @@ C {code.sym} 900 -560 0 0 {name=COMMANDS
 value="
 .control
   dc V_IN_P 1.4 1.9 0.002
-  
   let V_out = v(V_out)
-  plot V_out
+  plot V_out title \\"tanh OTA: Saturating Transfer Characteristic\\"
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/tanh_ota_sweep.txt V_out
 .endc
 "}
 C {vsource.sym} 640 -210 0 0 {name=V_REF value=1.65 savecurrent=false}

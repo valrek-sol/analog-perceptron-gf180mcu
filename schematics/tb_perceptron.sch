@@ -58,65 +58,108 @@ C {lab_pin.sym} 1220 -260 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
 C {vsource.sym} 1160 -150 0 0 {name=V6 value=0.7 savecurrent=false}
 C {isource.sym} 10 -150 0 0 {name=I_X1 value=20u}
 C {isource.sym} 90 -150 0 0 {name=I_X2 value=20u}
-C {vsource.sym} 160 -150 0 0 {name=V_W1 value=1.85 savecurrent=false}
-C {vsource.sym} 230 -150 0 0 {name=V_W2 value=1.85 savecurrent=false}
+C {vsource.sym} 160 -150 0 0 {name=V_W1 value=1.65 savecurrent=false}
+C {vsource.sym} 230 -150 0 0 {name=V_W2 value=1.65 savecurrent=false}
 C {vsource.sym} 300 -150 0 0 {name=V_B value=1.65 savecurrent=false}
 C {code.sym} 910 -600 0 0 {name=COMMANDS
 value="
 .control
-  * --- UI THEME OVERRIDES ---
-  set color0=white
-  set color1=black
-  set xbrushwidth=2
+  * --- start from neutral ---
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X1 = 0
+  alter I_X2 = 0
 
-  * ==========================================
-  * GRAPH 1: Weights (Inhibitive to Excitatory)
-  * ==========================================
+  * === Graph 1: Weight sweep (inhibitory / neutral / excitatory) ===
   alter I_X2 = 0
   alter V_W2 = 1.65
-  alter V_B = 1.65
-  * Sweep Sensor 1, Step Weight 1 (-200mV, 0mV, +200mV)
-  dc I_X1 0 50u 1u V_W1 1.45 1.85 0.2
-  set title=\\"Graph 1: Weight Sweep (Inhibitory, Neutral, Excitatory)\\"
-  plot v(V_out_perceptron)
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 2
+    let vw1 = 1.45 + n * 0.2
+    alter V_W1 = vw1
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph1_weights.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
 
-  * ==========================================
-  * GRAPH 2: Sensor Interference
-  * ==========================================
+  * === Graph 2: Sensor 1 sweep, Sensor 2 interference ===
   alter V_W1 = 1.85
   alter V_W2 = 1.85
-  alter V_B = 1.65
-  * Both weights strongly positive. Sweep X1, Step X2 (0, 25u, 50u)
-  dc I_X1 0 50u 1u I_X2 0 50u 25u
-  set title=\\"Graph 2: Sensor 1 vs Sensor 2 Interference\\"
-  plot v(V_out_perceptron)
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 2
+    let ix2 = n * 25u
+    alter I_X2 = ix2
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph2_sensors.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter I_X2 = 0
 
-  * ==========================================
-  * GRAPH 3: Bias Shifting
-  * ==========================================
+  * === Graph 3: Bias shifting ===
   alter I_X2 = 0
   alter V_W1 = 1.85
-  * Sensor 1 sweeping, Weight 1 positive, Step Bias
-  dc I_X1 0 50u 1u V_B 1.45 1.85 0.2
-  set title=\\"Graph 3: Bias shifting the S-Curve horizontally\\"
-  plot v(V_out_perceptron)
+  let n = 0
+  dowhile n <= 2
+    let vb = 1.45 + n * 0.2
+    alter V_B = vb
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph3_bias.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_B  = 1.65
 
-  * ==========================================
-  * 3D DATA GENERATION (Silent Export)
-  * ==========================================
-  * 3D Plot A: X = Sensor 1, Y = Sensor 2, Z = Output
+  * === 3D Dataset A: I_X1 x I_X2 -> V_out ===
   alter V_W1 = 1.85
   alter V_W2 = 1.85
-  alter V_B = 1.65
-  dc I_X1 0 50u 1u I_X2 0 50u 2u
-  wrdata /foss/designs/analog-perceptron-gf180mcu/schematics/3d_sensors.txt v(V_out_perceptron)
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 25
+    let ix2b = n * 2u
+    alter I_X2 = ix2b
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/3d_sensors.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter I_X2 = 0
 
-  * 3D Plot B: X = Weight 1, Y = Weight 2, Z = Output
+  * === 3D Dataset B: V_W1 x V_W2 -> V_out ===
   alter I_X1 = 50u
   alter I_X2 = 50u
-  alter V_B = 1.65
-  dc V_W1 1.45 1.85 0.01 V_W2 1.45 1.85 0.02
-  wrdata /foss/designs/analog-perceptron-gf180mcu/schematics/3d_weights.txt v(V_out_perceptron)
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 20
+    let vw2 = 1.45 + n * 0.02
+    alter V_W2 = vw2
+    dc V_W1 1.45 1.85 0.01
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/3d_weights.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+
+  * --- final state: neutral, zero input ---
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X1 = 0
+  alter I_X2 = 0
 .endc
 "}
 C {devices/code_shown.sym} 340 -590 0 0 {name=MODELS only_toplevel=true
