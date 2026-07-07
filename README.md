@@ -6,9 +6,31 @@ This project is made by utilizing GF180mcu PDK, for the 2026 SSCS PICO Chipathon
 
 ## Overview
 
-A single perceptron in the analog (continuous time) domain, where its weights and biases are programmable. Intended operation is in DC mode, and sensor agnostic as long as it is a current mode sensor. Designed with photodiodes in mind. Basically analog computation, where the computation performed is : y = f(x1w1+x2w2+b), where f is an activation function resembling or closely approximating tanh or sigmoid.
+A single perceptron in the analog (continuous time) domain, where its weights and biases are programmable. Intended operation is in DC mode, and sensor agnostic as long as it is a current mode sensor. Designed with photodiodes in mind. Basically analog computation, where the computation performed is :
+
+
+![perceptron equation](docs/images/perceptron_eqn.png "Perceptron Equation")
+
+Where, 
+F is the activation function (tanh/sigmoid) 
+X1, X2 are input sensor currents (pull down)
+W1,W2 are input weights (voltages) ← “Programmable”
+B is the bias (voltage)
+Y is the output voltage
+
+![perceptron sketch](docs/images/perceptron_sketch.png "Sketch of model of a perceptron neuron")
 
 Highlight is that there is no digital, memory elements. The calculation happens as fast it can. As in, the time taken, intuitively, is the time taken for an input impulse to form a respective output impulse response. All while maintaining the full "analog" resolution. In contrast, a typical digital circuit would take a MAC operation(s) with a delay to perform it, and would be limited to the precision it has. Not to mention the involvment of ADC, DAC in such a digital circuit, causing overhead.
+
+### High level block details
+
+![perceptron diagram](docs/images/perceptron_block_diagram.png "Block diagram of the perceptron implemented")
+
+* Transimpedance amplifier (TIA) (x2) converts sensor currents to voltage. (I → V)
+* An array of Gilbert multipliers (x3) multiplies those voltages with the weights. Outputs current (V→I) 
+* Using Kirchhoff's Current Law (KCL) Output Currents are summed from each multiplier.
+* A Differential Pair in Operational Transconductance Amplifier (OTA) naturally squeezes the output in a tanh / square law shape for activation function.
+
 
 ## Repository Structure
 
@@ -49,7 +71,3 @@ Area estimate is approximately ~300um x 300um currently.
 
 [Schematic Review Video Link](https://drive.google.com/file/d/1bdpH2OENgyuMhEZ-BPgnGtmW76qQdRpw/view?usp=drive_link)
 
-
-## Specifications (Target)
-
-### Pins
