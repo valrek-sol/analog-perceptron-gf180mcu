@@ -18,8 +18,6 @@ N 1040 -230 1120 -230 {lab=#net2}
 N 1120 -230 1120 -180 {lab=#net2}
 N 1120 -180 1280 -180 {lab=#net2}
 N 1280 -320 1280 -180 {lab=#net2}
-N 1340 -670 1340 -500 {lab=VDD}
-N 1540 -600 1540 -500 {lab=VDD}
 N 1240 -380 1340 -380 {lab=#net1}
 N 1340 -440 1340 -380 {lab=#net1}
 N 1340 -380 1340 -360 {lab=#net1}
@@ -47,20 +45,12 @@ N 560 -80 580 -80 {lab=VSS}
 N 550 -500 580 -500 {lab=V_ref_1_25}
 N 550 -360 600 -360 {lab=V_ref_1_25}
 N 1340 -660 1540 -660 {lab=VDD}
-N 1540 -660 1540 -600 {lab=VDD}
 N 1540 -660 2000 -660 {lab=VDD}
 N 2000 -660 2000 -360 {lab=VDD}
 N 1980 -360 2000 -360 {lab=VDD}
 N 1300 -470 1320 -470 {lab=VSS}
 N 1300 -470 1300 -80 {lab=VSS}
-N 1560 -470 1580 -470 {lab=VSS}
-N 1580 -470 1580 -80 {lab=VSS}
 N 1120 -320 1280 -320 {lab=#net2}
-N 1540 -440 1540 -340 {lab=#net2}
-N 1540 -340 1680 -340 {lab=#net2}
-N 1320 -340 1540 -340 {lab=#net2}
-N 1320 -340 1320 -320 {lab=#net2}
-N 1280 -320 1320 -320 {lab=#net2}
 N 220 -500 250 -500 {lab=V_bias}
 N 220 -500 220 -360 {lab=V_bias}
 N 220 -360 250 -360 {lab=V_bias}
@@ -116,6 +106,16 @@ N 550 -480 590 -480 {lab=#net4}
 N 590 -480 590 -460 {lab=#net4}
 N 590 -460 740 -460 {lab=#net4}
 N 700 -660 700 -190 {lab=V_ref_1_15}
+N 1280 -320 1620 -320 {lab=#net2}
+N 1620 -340 1620 -320 {lab=#net2}
+N 1620 -340 1680 -340 {lab=#net2}
+N 1520 -440 1520 -320 {lab=#net2}
+N 1540 -470 1560 -470 {lab=VSS}
+N 1560 -470 1560 -80 {lab=VSS}
+N 1520 -660 1520 -500 {lab=VDD}
+N 160 -620 1340 -620 {lab=V_shift}
+N 1340 -620 1340 -500 {lab=V_shift}
+N 1340 -670 1340 -660 {lab=VDD}
 C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 400 -480 0 0 {name=x1}
 C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 400 -340 0 0 {name=x2}
 C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 890 -480 0 0 {name=x_g1}
@@ -129,12 +129,6 @@ model=ppolyf_u
 spiceprefix=X
 m=1}
 C {iopin.sym} 1340 -670 3 0 {name=p1 lab=VDD}
-C {symbols/ppolyf_u.sym} 1540 -470 0 1 {name=R2
-W=1e-6
-L=7e-6
-model=ppolyf_u
-spiceprefix=X
-m=1}
 C {iopin.sym} 1340 -70 1 0 {name=p2 lab=VSS}
 C {iopin.sym} 220 -660 3 0 {name=p3 lab=V_bias}
 C {ipin.sym} 160 -480 0 0 {name=p4 lab=I_x1}
@@ -148,3 +142,10 @@ C {ipin.sym} 160 -140 0 0 {name=p11 lab=V_w2}
 C {ipin.sym} 160 -60 0 0 {name=p12 lab=V_b}
 C {iopin.sym} 1660 -680 3 0 {name=p13 lab=V_ref_0_7}
 C {opin.sym} 2020 -320 0 0 {name=p14 lab=V_out_perceptron}
+C {symbols/ppolyf_u.sym} 1520 -470 2 0 {name=R2
+W=1e-6
+L=7e-6
+model=ppolyf_u
+spiceprefix=X
+m=1}
+C {ipin.sym} 160 -620 0 0 {name=p15 lab=V_shift}

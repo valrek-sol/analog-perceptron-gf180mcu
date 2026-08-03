@@ -33,27 +33,27 @@ N 630 -400 1160 -400 {lab=#net7}
 N 1080 -120 1160 -120 {lab=0}
 N 10 -120 90 -120 {lab=0}
 N 220 -120 460 -120 {lab=0}
-N 90 -380 90 -180 {lab=#net8}
-N 90 -380 200 -380 {lab=#net8}
-N 10 -400 200 -400 {lab=#net9}
-N 10 -400 10 -180 {lab=#net9}
 N 90 -120 220 -120 {lab=0}
-N 200 -380 330 -380 {lab=#net8}
-N 200 -400 330 -400 {lab=#net9}
-N 160 -360 160 -180 {lab=#net10}
-N 160 -360 330 -360 {lab=#net10}
-N 230 -340 330 -340 {lab=#net11}
-N 230 -340 230 -180 {lab=#net11}
-N 300 -320 300 -180 {lab=#net12}
-N 300 -320 330 -320 {lab=#net12}
-C {analog-perceptron-gf180mcu/schematics/perceptron.sym} 480 -320 0 0 {name=x1}
+N -60 -120 10 -120 {lab=0}
+N -60 -400 -60 -180 {lab=#net8}
+N -60 -400 330 -400 {lab=#net8}
+N 10 -380 330 -380 {lab=#net9}
+N 10 -380 10 -180 {lab=#net9}
+N 90 -360 90 -180 {lab=#net10}
+N 90 -360 330 -360 {lab=#net10}
+N 160 -340 330 -340 {lab=#net11}
+N 160 -340 160 -180 {lab=#net11}
+N 230 -320 230 -180 {lab=#net12}
+N 230 -320 330 -320 {lab=#net12}
+N 300 -300 330 -300 {lab=#net13}
+N 300 -300 300 -180 {lab=#net13}
 C {vsource.sym} 680 -150 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {gnd.sym} 460 -60 0 0 {name=l1 lab=0}
 C {vsource.sym} 770 -150 0 0 {name=V1 value=1 savecurrent=false}
-C {vsource.sym} 840 -150 0 0 {name=V2 value=1.25 savecurrent=false}
-C {vsource.sym} 920 -150 0 0 {name=V3 value=1.65 savecurrent=false}
-C {vsource.sym} 1000 -150 0 0 {name=V4 value=1.15 savecurrent=false}
-C {vsource.sym} 1080 -150 0 0 {name=V5 value=1.8 savecurrent=false}
+C {vsource.sym} 1000 -150 0 0 {name=V2 value=1.25 savecurrent=false}
+C {vsource.sym} 1080 -150 0 0 {name=V3 value=1.65 savecurrent=false}
+C {vsource.sym} 840 -150 0 0 {name=V4 value=1.15 savecurrent=false}
+C {vsource.sym} 920 -150 0 0 {name=V5 value=1.8 savecurrent=false}
 C {lab_pin.sym} 1220 -260 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
 C {vsource.sym} 1160 -150 0 0 {name=V6 value=0.7 savecurrent=false}
 C {isource.sym} 10 -150 0 0 {name=I_X1 value=20u}
@@ -170,3 +170,5 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 "}
+C {vsource.sym} -60 -150 0 0 {name=V_Shift value=3.3 savecurrent=false}
+C {analog-perceptron-gf180mcu/schematics/perceptron.sym} 480 -320 0 0 {name=x1}
