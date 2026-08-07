@@ -167,10 +167,10 @@ C {ipin.sym} 20 -330 0 0 {name=p5 lab=V_w_p
 }
 C {ipin.sym} 20 -280 0 0 {name=p6 lab=V_w_n
 }
-C {symbols/ppolyf_u.sym} 490 -50 1 0 {name=R1
+C {symbols/ppolyf_u_1k.sym} 490 -50 1 0 {name=R1
 W=1e-6
-L=40e-6
-model=ppolyf_u
+L=15.4e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {opin.sym} 120 -580 3 0 {name=p8 lab=I_o_n

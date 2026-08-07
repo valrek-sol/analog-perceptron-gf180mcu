@@ -2,7 +2,10 @@
 Chipathon 2026 - Analog Perceptron (GF180MCU)
 Post-processing / plotting pipeline for the ngspice wrdata exports
 produced by the revised .control blocks.
-
+assisted (grunt work and epic tips, google on steroids!) by claude AI.
+Author : Guru Charan (and claude!) 
+(newb, cut some slack? no ? yes? idk? help)
+totally my idea tho i will say that straight. 
 Run this from the directory containing the exported .txt files
 (or set DATA_DIR below), after running the testbenches in ngspice.
 
@@ -13,6 +16,7 @@ Expected input files (2 columns each, whitespace separated, no header):
   perceptron_graph1_weights.txt   I_X1,     V_out    x 3 stacked  (V_W1 = 1.45/1.65/1.85)
   perceptron_graph2_sensors.txt   I_X1,     V_out    x 3 stacked  (I_X2 = 0/25u/50u)
   perceptron_graph3_bias.txt      I_X1,     V_out    x 3 stacked  (V_B  = 1.45/1.65/1.85)
+  perceptron_graph4_vshift.txt    I_X1,     V_out    x 6 stacked  (V_Shift = 3.25..3.35 step 0.02)
   3d_sensors.txt                  I_X1,     V_out    x 26 stacked (I_X2 = 0..50u step 2u)
   3d_weights.txt                  V_W1,     V_out    x 21 stacked (V_W2 = 1.45..1.85 step 0.02)
 
@@ -47,13 +51,18 @@ plt.rcParams.update({
     "savefig.facecolor": "white",
 })
 
-CURVE_COLORS = ["#1f4e8c", "#c0392b", "#1a8a3d", "#8e44ad", "#e67e22"]
+# 6 colors on purpose: Graph 4 (V_Shift, added below) stacks 6 curves, and
+# plot_perceptron_family() zips against this list -- zip() truncates
+# silently to the shorter of the two, so a 5-color list here would just
+# drop the 6th curve with no error or warning. Keep this >= the largest
+# family size below if you add more curves later.
+CURVE_COLORS = ["#1f4e8c", "#c0392b", "#1a8a3d", "#8e44ad", "#e67e22", "#16a085"]
 
 
 def _path(fname):
     p = DATA_DIR / fname
     if not p.exists():
-        print(f"[skip] {fname} not found — run the matching .control block first.")
+        print(f"[skip] {fname} not found , please run the matching .control block first.")
         return None
     return p
 
@@ -145,7 +154,7 @@ if res:
     ax.plot(vin, vout_tanh, color=CURVE_COLORS[0], lw=2)
     ax.set_xlabel("V_in_p (V)")
     ax.set_ylabel("V_out (V)")
-    ax.set_title("tanh OTA: Saturating Transfer Characteristic")
+    ax.set_title("tanh OTA: Sweep")
     save(fig, "04_tanh_ota")
 
 
@@ -181,6 +190,11 @@ plot_perceptron_family(
     "perceptron_graph3_bias.txt", 51, [1.45, 1.65, 1.85],
     "V_B = {:.2f} V", "Perceptron: Bias Shifting the S-Curve",
     "07_perceptron_bias")
+
+plot_perceptron_family(
+    "perceptron_graph4_vshift.txt", 51, [3.25, 3.27, 3.29, 3.31, 3.33, 3.35],
+    "V_Shift = {:.2f} V", "Perceptron: V_Shift Sweep",
+    "10_perceptron_vshift")
 
 # ---------------------------------------------------------------
 # 8-9. 3D surfaces

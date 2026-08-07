@@ -27,10 +27,10 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/ppolyf_u.sym} 270 -370 0 0 {name=R1
+C {symbols/ppolyf_u_1k.sym} 270 -370 0 0 {name=R1
 W=1e-6
-L=7e-6
-model=ppolyf_u
+L=2.7e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {iopin.sym} 270 -400 3 0 {name=p1 lab=V_ref}

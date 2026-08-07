@@ -15,23 +15,18 @@ N 250 -250 410 -250 {lab=#net4}
 N 250 -250 250 -160 {lab=#net4}
 N 330 -230 330 -160 {lab=#net5}
 N 330 -230 410 -230 {lab=#net5}
-N 20 -100 100 -100 {lab=0}
-N 100 -100 180 -100 {lab=0}
-N 180 -100 250 -100 {lab=0}
-N 250 -100 330 -100 {lab=0}
-N 180 -100 180 -40 {lab=0}
-N 180 -70 500 -70 {lab=0}
-N 650 -70 940 -70 {lab=0}
+N 20 -100 180 -100 {lab=0}
+N 180 -100 330 -100 {lab=0}
+N 180 -70 180 -40 {lab=0}
+N 180 -70 740 -70 {lab=0}
+N 740 -70 940 -70 {lab=0}
 N 940 -110 940 -70 {lab=0}
-N 740 -250 740 -70 {lab=0}
-N 740 -270 740 -250 {lab=0}
+N 740 -230 740 -70 {lab=0}
+N 740 -270 740 -230 {lab=0}
 N 710 -270 740 -270 {lab=0}
-N 500 -70 580 -70 {lab=0}
-N 940 -200 940 -170 {lab=#net6}
+N 940 -190 940 -170 {lab=#net6}
 N 940 -310 940 -260 {lab=V_o_p}
-N 780 -310 940 -310 {lab=V_o_p}
-N 710 -310 780 -310 {lab=V_o_p}
-N 580 -70 650 -70 {lab=0}
+N 710 -310 940 -310 {lab=V_o_p}
 N 800 -290 800 -260 {lab=V_o_n}
 N 710 -290 800 -290 {lab=V_o_n}
 N 800 -200 800 -190 {lab=#net6}
@@ -42,18 +37,32 @@ N 770 -170 910 -170 {lab=0}
 N 770 -230 770 -170 {lab=0}
 N 770 -230 780 -230 {lab=0}
 N 740 -230 770 -230 {lab=0}
-C {vsource.sym} 180 -130 0 0 {name=V_X_P value=1.35 savecurrent=false}
+N 180 -100 180 -70 {lab=0}
+N 940 -200 940 -190 {lab=#net6}
+C {vsource.sym} 180 -130 0 0 {name=V_X_P value=1.3 savecurrent=false}
 C {vsource.sym} 250 -130 0 0 {name=V_X_N value=1.2 savecurrent=false}
-C {vsource.sym} 330 -130 0 0 {name=V_TAIL value=1.8 savecurrent=false}
+C {vsource.sym} 330 -130 0 0 {name=V_TAIL value=1.65 savecurrent=false}
 C {vsource.sym} 20 -130 0 0 {name=V_W_P value=1.65 savecurrent=false}
 C {vsource.sym} 100 -130 0 0 {name=V_W_N value=1.65 savecurrent=false}
 C {gnd.sym} 180 -40 0 0 {name=l1 lab=0}
 C {code.sym} 220 -510 0 0 {name=COMMANDS
 value="
 .control
+  op
+  echo \\"--- Gilbert cell x1: transistor op points ---\\"
+  print @m.x1.xm1.m0[vgs] @m.x1.xm1.m0[vth] @m.x1.xm1.m0[vdsat] @m.x1.xm1.m0[id] @m.x1.xm1.m0[gm] @m.x1.xm1.m0[gds]
+  print @m.x1.xm2.m0[vgs] @m.x1.xm2.m0[vth] @m.x1.xm2.m0[vdsat] @m.x1.xm2.m0[id] @m.x1.xm2.m0[gm] @m.x1.xm2.m0[gds]
+  print @m.x1.xm3.m0[vgs] @m.x1.xm3.m0[vth] @m.x1.xm3.m0[vdsat] @m.x1.xm3.m0[id] @m.x1.xm3.m0[gm] @m.x1.xm3.m0[gds]
+  print @m.x1.xm4.m0[vgs] @m.x1.xm4.m0[vth] @m.x1.xm4.m0[vdsat] @m.x1.xm4.m0[id] @m.x1.xm4.m0[gm] @m.x1.xm4.m0[gds]
+  print @m.x1.xm5.m0[vgs] @m.x1.xm5.m0[vth] @m.x1.xm5.m0[vdsat] @m.x1.xm5.m0[id] @m.x1.xm5.m0[gm] @m.x1.xm5.m0[gds]
+  print @m.x1.xm6.m0[vgs] @m.x1.xm6.m0[vth] @m.x1.xm6.m0[vdsat] @m.x1.xm6.m0[id] @m.x1.xm6.m0[gm] @m.x1.xm6.m0[gds]
+  print @m.x1.xm7.m0[vgs] @m.x1.xm7.m0[vth] @m.x1.xm7.m0[vdsat] @m.x1.xm7.m0[id] @m.x1.xm7.m0[gm] @m.x1.xm7.m0[gds]
+  print @m.x1.xm8.m0[vgs] @m.x1.xm8.m0[vth] @m.x1.xm8.m0[vdsat] @m.x1.xm8.m0[id] @m.x1.xm8.m0[gm] @m.x1.xm8.m0[gds]
+  echo \\"--- Gilbert cell x1: tail resistor ---\\"
+  print @r.x1.xr1.rt1[resistance] @r.x1.xr1.rt2[resistance]
   * === Single sweep: baseline transfer curve ===
-  alter V_X_P = 1.30
-  alter V_X_N = 1.20
+  alter V_X_P = 1.3
+  alter V_X_N = 1.2
   dc V_W_P 1.15 2.15 0.01
   let V_diff_single = v(V_o_p) - v(V_o_n)
   plot V_diff_single title \\"Gilbert Multiplier: Single Weight Sweep\\"
@@ -63,7 +72,7 @@ value="
   * === Family of curves, one clean sweep per V_X_P step ===
   let n = 0
   dowhile n <= 4
-    let vxp = 1.10 + n * 0.05
+    let vxp = 1.1 + n * 0.05
     alter V_X_P = vxp
     dc V_W_P 1.15 2.15 0.01
     let V_diff_fam = v(V_o_p) - v(V_o_n)
@@ -73,7 +82,16 @@ value="
   end
   unset appendwrite
 
-  alter V_X_P = 1.35
+  alter V_X_P = 1.3
+  alter V_X_N = 1.2
+  alter V_W_P = 1.65
+  * === OP-SWEEP DIAGNOSTIC: all 8 devices' headroom across full weight range ===
+  alter V_X_P = 1.3
+  alter V_X_N = 1.2
+  save all @m.x1.xm1.m0[vgs] @m.x1.xm1.m0[vth] @m.x1.xm1.m0[vdsat] @m.x1.xm1.m0[id] @m.x1.xm1.m0[gm] @m.x1.xm1.m0[gds] @m.x1.xm2.m0[vgs] @m.x1.xm2.m0[vth] @m.x1.xm2.m0[vdsat] @m.x1.xm2.m0[id] @m.x1.xm2.m0[gm] @m.x1.xm2.m0[gds] @m.x1.xm3.m0[vgs] @m.x1.xm3.m0[vth] @m.x1.xm3.m0[vdsat] @m.x1.xm3.m0[id] @m.x1.xm3.m0[gm] @m.x1.xm3.m0[gds] @m.x1.xm4.m0[vgs] @m.x1.xm4.m0[vth] @m.x1.xm4.m0[vdsat] @m.x1.xm4.m0[id] @m.x1.xm4.m0[gm] @m.x1.xm4.m0[gds] @m.x1.xm5.m0[vgs] @m.x1.xm5.m0[vth] @m.x1.xm5.m0[vdsat] @m.x1.xm5.m0[id] @m.x1.xm5.m0[gm] @m.x1.xm5.m0[gds] @m.x1.xm6.m0[vgs] @m.x1.xm6.m0[vth] @m.x1.xm6.m0[vdsat] @m.x1.xm6.m0[id] @m.x1.xm6.m0[gm] @m.x1.xm6.m0[gds] @m.x1.xm7.m0[vgs] @m.x1.xm7.m0[vth] @m.x1.xm7.m0[vdsat] @m.x1.xm7.m0[id] @m.x1.xm7.m0[gm] @m.x1.xm7.m0[gds] @m.x1.xm8.m0[vgs] @m.x1.xm8.m0[vth] @m.x1.xm8.m0[vdsat] @m.x1.xm8.m0[id] @m.x1.xm8.m0[gm] @m.x1.xm8.m0[gds]
+  dc V_W_P 1.15 2.15 0.01
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/opsweep_gilbert.txt v(V_o_p) v(V_o_n) @m.x1.xm1.m0[vgs] @m.x1.xm1.m0[vth] @m.x1.xm1.m0[vdsat] @m.x1.xm1.m0[id] @m.x1.xm1.m0[gm] @m.x1.xm1.m0[gds] @m.x1.xm2.m0[vgs] @m.x1.xm2.m0[vth] @m.x1.xm2.m0[vdsat] @m.x1.xm2.m0[id] @m.x1.xm2.m0[gm] @m.x1.xm2.m0[gds] @m.x1.xm3.m0[vgs] @m.x1.xm3.m0[vth] @m.x1.xm3.m0[vdsat] @m.x1.xm3.m0[id] @m.x1.xm3.m0[gm] @m.x1.xm3.m0[gds] @m.x1.xm4.m0[vgs] @m.x1.xm4.m0[vth] @m.x1.xm4.m0[vdsat] @m.x1.xm4.m0[id] @m.x1.xm4.m0[gm] @m.x1.xm4.m0[gds] @m.x1.xm5.m0[vgs] @m.x1.xm5.m0[vth] @m.x1.xm5.m0[vdsat] @m.x1.xm5.m0[id] @m.x1.xm5.m0[gm] @m.x1.xm5.m0[gds] @m.x1.xm6.m0[vgs] @m.x1.xm6.m0[vth] @m.x1.xm6.m0[vdsat] @m.x1.xm6.m0[id] @m.x1.xm6.m0[gm] @m.x1.xm6.m0[gds] @m.x1.xm7.m0[vgs] @m.x1.xm7.m0[vth] @m.x1.xm7.m0[vdsat] @m.x1.xm7.m0[id] @m.x1.xm7.m0[gm] @m.x1.xm7.m0[gds] @m.x1.xm8.m0[vgs] @m.x1.xm8.m0[vth] @m.x1.xm8.m0[vdsat] @m.x1.xm8.m0[id] @m.x1.xm8.m0[gm] @m.x1.xm8.m0[gds]
+  alter V_X_P = 1.3
   alter V_X_N = 1.2
   alter V_W_P = 1.65
 .endc
@@ -90,13 +108,13 @@ C {vsource.sym} 940 -140 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 560 -270 0 0 {name=x1}
 C {symbols/ppolyf_u.sym} 940 -230 0 0 {name=R1
 W=1e-6
-L=20e-6
+L=5e-6
 model=ppolyf_u
 spiceprefix=X
 m=1}
 C {symbols/ppolyf_u.sym} 800 -230 0 0 {name=R2
 W=1e-6
-L=20e-6
+L=5e-6
 model=ppolyf_u
 spiceprefix=X
 m=1}

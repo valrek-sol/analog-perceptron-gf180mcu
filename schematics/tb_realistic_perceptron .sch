@@ -28,6 +28,14 @@ N 630 -400 680 -400 {lab=#net7}
 N 680 -400 680 -180 {lab=#net7}
 N 630 -360 640 -360 {lab=0}
 N 640 -360 640 -120 {lab=0}
+N 10 -300 40 -270 {lab=#net2}
+N 90 -300 120 -270 {lab=#net3}
+N 120 -210 140 -120 {lab=0}
+N 40 -210 60 -120 {lab=0}
+N 680 -120 780 -120 {lab=0}
+N 680 -220 780 -180 {lab=#net7}
+N 780 -120 850 -120 {lab=0}
+N 680 -220 850 -180 {lab=#net7}
 C {vsource.sym} 680 -150 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {gnd.sym} 460 -60 0 0 {name=l1 lab=0}
 C {lab_pin.sym} 840 -380 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
@@ -55,7 +63,7 @@ value="
     let vw1 = 1.45 + n * 0.2
     alter V_W1 = vw1
     dc I_X1 0 50u 1u
-    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph1_weights.txt v(V_out_perceptron)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph1_weights.txt v(V_out_perceptron)
     set appendwrite
     let n = n + 1
   end
@@ -71,7 +79,7 @@ value="
     let ix2 = n * 25u
     alter I_X2 = ix2
     dc I_X1 0 50u 1u
-    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph2_sensors.txt v(V_out_perceptron)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph2_sensors.txt v(V_out_perceptron)
     set appendwrite
     let n = n + 1
   end
@@ -88,7 +96,7 @@ value="
     let vb = 1.45 + n * 0.2
     alter V_B = vb
     dc I_X1 0 50u 1u
-    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph3_bias.txt v(V_out_perceptron)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph3_bias.txt v(V_out_perceptron)
     set appendwrite
     let n = n + 1
   end
@@ -104,7 +112,7 @@ value="
     let vshift = 3.25 + n * 0.02
     alter V_Shift = vshift
     dc I_X1 0 50u 1u
-    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/perceptron_graph4_vshift.txt v(V_out_perceptron)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph4_vshift.txt v(V_out_perceptron)
     set appendwrite
     let n = n + 1
   end
@@ -121,7 +129,7 @@ value="
     let ix2b = n * 2u
     alter I_X2 = ix2b
     dc I_X1 0 50u 1u
-    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/3d_sensors.txt v(V_out_perceptron)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_3d_sensors.txt v(V_out_perceptron)
     set appendwrite
     let n = n + 1
   end
@@ -139,7 +147,7 @@ value="
     let vw2 = 1.45 + n * 0.02
     alter V_W2 = vw2
     dc V_W1 1.45 1.85 0.01
-    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/3d_weights.txt v(V_out_perceptron)
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_3d_weights.txt v(V_out_perceptron)
     set appendwrite
     let n = n + 1
   end
@@ -156,7 +164,7 @@ value="
   alter I_X2 = 0
   save all @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
   dc I_X1 0 50u 1u
-  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/opsweep_perceptron_chain.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_opsweep_perceptron_chain.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
   alter V_W1 = 1.65
   alter V_W2 = 1.65
   alter V_B  = 1.65
@@ -171,7 +179,7 @@ value="
   alter I_X1 = 25u
   save all @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
   dc I_X2 0 50u 1u
-  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/opsweep_perceptron_chain_ix2.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_opsweep_perceptron_chain_ix2.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
   alter V_W1 = 1.65
   alter V_W2 = 1.65
   alter V_B  = 1.65
@@ -189,3 +197,23 @@ value="
 "}
 C {vsource.sym} -60 -150 0 0 {name=V_Shift value=3.3 savecurrent=false}
 C {analog-perceptron-gf180mcu/schematics/perceptron.sym} 480 -350 0 0 {name=x1}
+C {capa.sym} 40 -240 0 0 {name=Cs1
+m=1
+value=70p
+footprint=1206
+device="ceramic capacitor"}
+C {capa.sym} 120 -240 0 0 {name=Cs2
+m=1
+value=70p
+footprint=1206
+device="ceramic capacitor"}
+C {capa.sym} 780 -150 0 0 {name=Cl
+m=1
+value=50p
+footprint=1206
+device="ceramic capacitor"}
+C {res.sym} 850 -150 0 0 {name=Rl
+value=1M
+footprint=1206
+device=resistor
+m=1}
