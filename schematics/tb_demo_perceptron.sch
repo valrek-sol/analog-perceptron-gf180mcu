@@ -31,18 +31,19 @@ N 640 -360 640 -120 {lab=0}
 C {vsource.sym} 680 -150 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {gnd.sym} 460 -60 0 0 {name=l1 lab=0}
 C {lab_pin.sym} 840 -380 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
-C {isource.sym} 10 -150 0 0 {name=I_X1 value=0u
+C {isource.sym} 10 -150 0 0 {name=I_X1 value=50u
 
 }
 C {isource.sym} 90 -150 0 0 {name=I_X2 value=50u
 }
 C {vsource.sym} 160 -150 0 0 {name=V_W1 value=1.85 savecurrent=false}
-C {vsource.sym} 230 -150 0 0 {name=V_W2 value=1.65 savecurrent=false}
-C {vsource.sym} 300 -150 0 0 {name=V_B value=1.65 savecurrent=false}
+C {vsource.sym} 230 -150 0 0 {name=V_W2 value=1.85 savecurrent=false}
+C {vsource.sym} 300 -150 0 0 {name=V_B value=1.85 savecurrent=false}
 C {code.sym} 910 -600 0 0 {name=COMMANDS
 value="
 .control
   op
+  print all
   print v(V_out_perceptron)
 .endc
 "}

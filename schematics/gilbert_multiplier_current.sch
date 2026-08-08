@@ -168,8 +168,8 @@ C {ipin.sym} 20 -330 0 0 {name=p5 lab=V_w_p
 C {ipin.sym} 20 -280 0 0 {name=p6 lab=V_w_n
 }
 C {symbols/ppolyf_u_1k.sym} 490 -50 1 0 {name=R1
-W=1e-6
-L=15.4e-6
+W=3e-6
+L=46.2e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}

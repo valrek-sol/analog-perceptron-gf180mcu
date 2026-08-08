@@ -110,8 +110,8 @@ C {ipin.sym} 220 -340 0 0 {name=p9 lab=V_in_n}
 C {ipin.sym} 220 -280 0 0 {name=p10 lab=V_bias}
 C {opin.sym} 800 -460 0 0 {name=p11 lab=V_out}
 C {symbols/ppolyf_u_1k.sym} 720 -550 0 0 {name=R1
-W=1e-6
-L=24.8e-6
+W=3e-6
+L=74.4e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}

@@ -107,15 +107,15 @@ value="
 C {vsource.sym} 940 -140 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 560 -270 0 0 {name=x1}
 C {symbols/ppolyf_u.sym} 940 -230 0 0 {name=R1
-W=1e-6
-L=5e-6
-model=ppolyf_u
+W=3e-6
+L=7e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
-C {symbols/ppolyf_u.sym} 800 -230 0 0 {name=R2
-W=1e-6
-L=5e-6
-model=ppolyf_u
+C {symbols/ppolyf_u_1k.sym} 800 -230 0 0 {name=R2
+W=3e-6
+L=7e-6
+model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 840 -310 0 0 {name=p1 sig_type=std_logic lab=V_o_p}

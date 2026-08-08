@@ -31,7 +31,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 "}
-C {code_shown.sym} 900 -660 0 0 {name=COMMANDS
+C {code.sym} 900 -450 0 0 {name=COMMANDS
 value="
 .control
   op
