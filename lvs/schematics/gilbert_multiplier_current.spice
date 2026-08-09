@@ -1,0 +1,13 @@
+** sch_path: /foss/designs/analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sch
+.subckt gilbert_multiplier_current I_o_p I_o_n V_w_p V_w_n V_x_p V_x_n V_tail VSS
+*.PININFO V_x_p:I V_x_n:I V_tail:I VSS:B V_w_p:I V_w_n:I I_o_n:O I_o_p:O
+M1 net1 V_x_p net3 VSS nfet_03v3 L=0.5u W=10u nf=1
+M2 net2 V_x_n net4 VSS nfet_03v3 L=0.5u W=10u nf=1
+M3 I_o_n V_w_p net1 VSS nfet_03v3 L=0.5u W=10u nf=1
+M4 I_o_p V_w_n net1 VSS nfet_03v3 L=0.5u W=10u nf=1
+M5 I_o_n V_w_n net2 VSS nfet_03v3 L=0.5u W=10u nf=1
+M6 I_o_p V_w_p net2 VSS nfet_03v3 L=0.5u W=10u nf=1
+M7 net3 V_tail VSS VSS nfet_03v3 L=1u W=5u nf=1
+M8 net4 V_tail VSS VSS nfet_03v3 L=1u W=5u nf=1
+XR1 net3 net4 VSS ppolyf_u_1k r_width=3e-6 r_length=46.2e-6
+.ends
