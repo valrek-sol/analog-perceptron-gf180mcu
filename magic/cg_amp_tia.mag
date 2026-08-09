@@ -1,0 +1,54 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1786310257
+<< pwell >>
+rect 800 -1440 1120 -1330
+rect 1600 -1440 3670 -1330
+rect 800 -1640 3670 -1440
+<< metal1 >>
+rect 860 -19 1060 181
+rect 890 -20 1030 -19
+rect 2210 -20 2410 180
+rect 915 -225 1006 -20
+rect 2240 -140 2380 -20
+rect 370 -810 570 -780
+rect 760 -810 900 -270
+rect 370 -950 900 -810
+rect 370 -980 570 -950
+rect 760 -1250 900 -950
+rect 1020 -810 1160 -270
+rect 1290 -280 2380 -140
+rect 1290 -810 1430 -280
+rect 1640 -810 1780 -580
+rect 1020 -950 1780 -810
+rect 1020 -1250 1160 -950
+rect 1640 -1180 1780 -950
+rect 3460 -810 3600 -590
+rect 3870 -810 4070 -780
+rect 3460 -950 4070 -810
+rect 3460 -1170 3600 -950
+rect 3870 -980 4070 -950
+rect 800 -1440 1120 -1330
+rect 1600 -1440 3670 -1330
+rect 800 -1640 3670 -1440
+use nfet_03v3_LEXRL4  M1
+timestamp 1786310257
+transform 1 0 960 0 1 -734
+box -300 -686 300 686
+use ppolyf_u_1k_E2RDXR  XR1
+timestamp 1786306604
+transform 0 1 2628 -1 0 -884
+box -536 -1168 536 1168
+<< labels >>
+flabel metal1 860 -19 1060 181 0 FreeSans 1600 0 0 0 V_bias
+port 3 nsew default bidirectional
+flabel metal1 1280 -1640 1480 -1440 0 FreeSans 1600 0 0 0 VSS
+port 5 nsew
+flabel metal1 370 -980 570 -780 0 FreeSans 1600 0 0 0 I_in
+port 4 nsew
+flabel metal1 3870 -980 4070 -780 0 FreeSans 1600 0 0 0 V_ref
+port 1 nsew
+flabel metal1 2210 -20 2410 180 0 FreeSans 1600 0 0 0 V_out
+port 2 nsew
+<< end >>
