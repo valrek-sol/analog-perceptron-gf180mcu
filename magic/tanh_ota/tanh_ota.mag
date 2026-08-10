@@ -1,0 +1,86 @@
+magic
+tech gf180mcuD
+magscale 1 5
+timestamp 1786358826
+<< error_s >>
+rect 2233 3546 2238 3569
+rect 2798 3024 2803 3047
+rect 2233 2954 2238 2977
+rect 2798 2432 2803 2455
+rect 2233 2362 2238 2385
+rect 1842 1955 1847 1978
+rect 2798 1840 2803 1863
+rect 2233 1770 2238 1793
+rect 1202 1623 1207 1646
+rect 1842 1613 1847 1636
+rect 1202 1281 1207 1304
+rect 1842 1271 1847 1294
+rect 2798 1248 2803 1271
+rect 2233 1178 2238 1201
+rect 1202 939 1207 962
+rect 1842 929 1847 952
+rect 2798 656 2803 679
+rect 1202 597 1207 620
+rect 1842 587 1847 610
+rect 2233 586 2238 609
+rect 536 237 541 260
+rect 638 237 643 260
+rect 740 237 745 260
+rect 842 237 847 260
+rect 1202 255 1207 278
+rect 1842 245 1847 268
+rect 2798 64 2803 87
+rect 1202 -86 1207 -63
+rect 1182 -870 1214 -857
+rect 1176 -877 1214 -870
+rect 3543 -1263 3550 -1257
+<< error_ps >>
+rect 3512 -1277 3543 -1257
+<< metal1 >>
+rect 0 0 100 100
+rect 0 -200 100 -100
+rect 0 -400 100 -300
+rect 0 -600 100 -500
+rect 0 -800 100 -700
+rect 0 -1000 100 -900
+rect 0 -1200 100 -1100
+use nfet_03v3_MMWPH8  XM1
+timestamp 1786358826
+transform 1 0 713 0 1 108
+box -303 -218 303 218
+use nfet_03v3_YXDTJE  XM2
+timestamp 1786358826
+transform 1 0 1226 0 1 921
+box -81 -1026 81 1026
+use nfet_03v3_8VC8CZ  XM3
+timestamp 1786358826
+transform 1 0 1866 0 1 971
+box -81 -1026 81 1026
+use pfet_03v3_CMV9EH  XM4
+timestamp 1786358826
+transform 1 0 2257 0 1 1812
+box -112 -1807 112 1807
+use pfet_03v3_5WLP7C  XM5
+timestamp 1786358826
+transform 1 0 2822 0 1 1822
+box -112 -1807 112 1807
+use ppolyf_u_1k_VRMJTE  XR1
+timestamp 1786358826
+transform 0 1 2363 -1 0 -1067
+box -608 -1328 608 1328
+<< labels >>
+flabel metal1 0 0 100 100 0 FreeSans 800 0 0 0 VDD
+port 0 nsew
+flabel metal1 0 -200 100 -100 0 FreeSans 800 0 0 0 V_ref
+port 1 nsew
+flabel metal1 0 -400 100 -300 0 FreeSans 800 0 0 0 V_out
+port 2 nsew
+flabel metal1 0 -600 100 -500 0 FreeSans 800 0 0 0 V_in_p
+port 3 nsew
+flabel metal1 0 -800 100 -700 0 FreeSans 800 0 0 0 V_in_n
+port 4 nsew
+flabel metal1 0 -1000 100 -900 0 FreeSans 800 0 0 0 V_bias
+port 5 nsew
+flabel metal1 0 -1200 100 -1100 0 FreeSans 800 0 0 0 VSS
+port 6 nsew
+<< end >>
