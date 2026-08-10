@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>GF180 DENSITY DRC Run Report at</description>
- <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/cg_amp_tia.gds</original-file>
- <generator>drc: script='/foss/pdks/ciel/gf180mcu/versions/7b70722e33c03fcb5dabcf4d479fb0822d9251c9/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
+ <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/cg_amp_tia/cg_amp_tia.gds</original-file>
+ <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
  <top-cell>cg_amp_tia</top-cell>
  <tags>
  </tags>

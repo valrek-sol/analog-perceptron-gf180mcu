@@ -1,4 +1,4 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 10/08/2026 15:32
+* Extracted by KLayout with GF180MCU LVS runset on : 10/08/2026 15:48
 
 .SUBCKT cg_amp_tia V_ref V_bias I_in V_out VSS
 R$1 V_out V_ref VSS 2700 ppolyf_u_1k L=8.1U W=3U
