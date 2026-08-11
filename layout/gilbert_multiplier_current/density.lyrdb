@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>GF180 DENSITY DRC Run Report at</description>
- <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/tanh_ota/tanh_ota.gds</original-file>
+ <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/gilbert_multiplier_current/gilbert_multiplier_current.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>tanh_ota</top-cell>
+ <top-cell>gilbert_multiplier_current</top-cell>
  <tags>
  </tags>
  <categories>
@@ -64,7 +64,7 @@
  </categories>
  <cells>
   <cell>
-   <name>tanh_ota</name>
+   <name>gilbert_multiplier_current</name>
    <variant/>
    <layout-name/>
    <references>
@@ -75,85 +75,85 @@
   <item>
    <tags/>
    <category>'DCF.1b'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M4.4'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M5.4'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'MT.3'</category>
-   <cell>tanh_ota</cell>
+   <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-1.005,-0.185;-1.005,34.395;24.225,34.395;24.225,-0.185)</value>
+    <value>polygon: (-18.765,-0.75;-18.765,20.57;4.77,20.57;4.77,-0.75)</value>
    </values>
   </item>
  </items>
