@@ -6,10 +6,5 @@ M2 V_out V_in_n net1 VSS nfet_03v3 L=0.5u W=10u nf=1
 M3 net1 V_bias VSS VSS nfet_03v3 L=0.5u W=10u nf=1
 M4 net2 net2 VDD VDD pfet_03v3 L=0.5u W=20u nf=1
 M5 V_out net2 VDD VDD pfet_03v3 L=0.5u W=20u nf=1
-XR1 net3 V_ref VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
-XR2 net4 net3 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
-XR3 net5 net4 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
-XR4 net6 net5 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
-XR5 net7 net6 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
-XR6 V_out net7 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
+XR6 V_out V_ref VSS ppolyf_u_1k r_width=3e-6 r_length=74.4e-6
 .ends
