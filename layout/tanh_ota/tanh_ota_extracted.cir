@@ -1,0 +1,14 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 11/08/2026 21:26
+
+.SUBCKT tanh_ota VDD V_ref V_out V_in_n V_bias V_in_p VSS
+M$1 \$6 V_in_p \$4 VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=3.3P PS=16.74U
++ PD=11.32U
+M$3 V_out V_in_n \$4 VSS nfet_03v3 L=0.5U W=10U AS=3.3P AD=4.35P PS=11.32U
++ PD=16.74U
+M$5 \$4 V_bias VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=16.74U
++ PD=16.74U
+R$8 V_out V_ref VSS 24800 ppolyf_u_1k L=74.4U W=3U
+M$13 V_out \$6 VDD VDD pfet_03v3 L=0.5U W=20U AS=9.1P AD=9.1P PS=31.82U
++ PD=31.82U
+M$15 \$6 \$6 VDD VDD pfet_03v3 L=0.5U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
+.ENDS tanh_ota

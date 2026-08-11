@@ -24,10 +24,22 @@ N 220 -340 640 -340 {lab=V_in_n}
 N 320 -280 390 -280 {lab=V_bias}
 N 220 -280 320 -280 {lab=V_bias}
 N 540 -460 640 -460 {lab=V_out}
-N 720 -660 720 -580 {lab=V_ref}
 N 640 -460 800 -460 {lab=V_out}
-N 720 -520 720 -460 {lab=V_out}
 N 320 -570 320 -560 {lab=VDD}
+N 780 -620 860 -620 {lab=VSS}
+N 860 -620 940 -620 {lab=VSS}
+N 940 -620 940 -600 {lab=VSS}
+N 860 -600 940 -600 {lab=VSS}
+N 780 -600 860 -600 {lab=VSS}
+N 940 -610 960 -610 {lab=VSS}
+N 720 -640 750 -640 {lab=V_ref}
+N 720 -660 720 -640 {lab=V_ref}
+N 810 -640 830 -640 {lab=#net3}
+N 890 -640 910 -640 {lab=#net4}
+N 970 -640 970 -580 {lab=#net5}
+N 890 -580 910 -580 {lab=#net6}
+N 810 -580 830 -580 {lab=#net7}
+N 750 -580 750 -460 {lab=V_out}
 C {symbols/nfet_03v3.sym} 300 -390 0 0 {name=M1
 L=0.5u
 W=10u
@@ -109,11 +121,41 @@ C {ipin.sym} 220 -390 0 0 {name=p8 lab=V_in_p}
 C {ipin.sym} 220 -340 0 0 {name=p9 lab=V_in_n}
 C {ipin.sym} 220 -280 0 0 {name=p10 lab=V_bias}
 C {opin.sym} 800 -460 0 0 {name=p11 lab=V_out}
-C {symbols/ppolyf_u_1k.sym} 720 -550 0 0 {name=R1
+C {symbols/ppolyf_u_1k.sym} 780 -640 3 0 {name=R1
 W=3e-6
-L=74.4e-6
+L=12.4e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {iopin.sym} 720 -660 3 0 {name=p12 lab=V_ref}
-C {lab_pin.sym} 700 -550 0 0 {name=p13 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 960 -610 2 0 {name=p13 sig_type=std_logic lab=VSS}
+C {symbols/ppolyf_u_1k.sym} 860 -640 3 0 {name=R2
+W=3e-6
+L=12.4e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}
+C {symbols/ppolyf_u_1k.sym} 940 -640 3 0 {name=R3
+W=3e-6
+L=12.4e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}
+C {symbols/ppolyf_u_1k.sym} 940 -580 1 0 {name=R4
+W=3e-6
+L=12.4e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}
+C {symbols/ppolyf_u_1k.sym} 860 -580 1 0 {name=R5
+W=3e-6
+L=12.4e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}
+C {symbols/ppolyf_u_1k.sym} 780 -580 1 0 {name=R6
+W=3e-6
+L=12.4e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}

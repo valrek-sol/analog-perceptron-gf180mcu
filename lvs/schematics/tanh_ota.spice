@@ -1,15 +1,15 @@
 ** sch_path: /foss/designs/analog-perceptron-gf180mcu/schematics/tanh_ota.sch
 .subckt tanh_ota VDD V_ref V_out V_in_p V_in_n V_bias VSS
 *.PININFO VDD:B VSS:B V_in_p:I V_in_n:I V_bias:I V_out:O V_ref:B
-XM1 net2 V_in_p net1 VSS nfet_03v3 L=0.5u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
-XM2 V_out V_in_n net1 VSS nfet_03v3 L=0.5u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
-XM3 net1 V_bias VSS VSS nfet_03v3 L=0.5u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
-XM4 net2 net2 VDD VDD pfet_03v3 L=0.5u W=20u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
-XM5 V_out net2 VDD VDD pfet_03v3 L=0.5u W=20u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
-XR1 V_out V_ref VSS ppolyf_u_1k r_width=3e-6 r_length=74.4e-6
+M1 net2 V_in_p net1 VSS nfet_03v3 L=0.5u W=10u nf=1
+M2 V_out V_in_n net1 VSS nfet_03v3 L=0.5u W=10u nf=1
+M3 net1 V_bias VSS VSS nfet_03v3 L=0.5u W=10u nf=1
+M4 net2 net2 VDD VDD pfet_03v3 L=0.5u W=20u nf=1
+M5 V_out net2 VDD VDD pfet_03v3 L=0.5u W=20u nf=1
+XR1 net3 V_ref VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
+XR2 net4 net3 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
+XR3 net5 net4 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
+XR4 net6 net5 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
+XR5 net7 net6 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
+XR6 V_out net7 VSS ppolyf_u_1k r_width=3e-6 r_length=12.4e-6
 .ends
