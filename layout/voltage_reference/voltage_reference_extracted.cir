@@ -1,4 +1,4 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 12/08/2026 19:43
+* Extracted by KLayout with GF180MCU LVS runset on : 12/08/2026 20:52
 
 .SUBCKT voltage_reference v_1_65 v_1_25 v_1_15 v_0_7 VDD VSS
 M$1 \$20 \$20 VSS VSS nfet_03v3 L=1U W=10U AS=4.35P AD=3.3P PS=16.74U PD=11.32U
