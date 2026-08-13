@@ -1,6 +1,6 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 12/08/2026 00:20
+* Extracted by KLayout with GF180MCU LVS runset on : 13/08/2026 11:42
 
-.SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_p I_o_p V_w_n I_o_n
+.SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_p I_o_n V_w_n I_o_p
 + VSS
 M$1 \$18 V_x_p \$4 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
 + PD=15.28U
