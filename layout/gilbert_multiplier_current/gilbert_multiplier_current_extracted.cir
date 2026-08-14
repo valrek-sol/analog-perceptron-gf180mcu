@@ -1,20 +1,20 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 13/08/2026 13:45
+* Extracted by KLayout with GF180MCU LVS runset on : 14/08/2026 11:40
 
 .SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_p I_o_n I_o_p V_w_n
 + VSS
-M$1 \$18 V_x_p \$4 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
-+ PD=15.28U
-M$5 I_o_n V_w_p \$18 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=2.95P PS=15.28U
+M$1 I_o_n V_w_p \$18 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=2.95P PS=15.28U
 + PD=12.36U
-M$9 I_o_p V_w_n \$18 VSS nfet_03v3 L=0.5U W=10U AS=2.95P AD=3.475P PS=12.36U
+M$5 I_o_p V_w_n \$18 VSS nfet_03v3 L=0.5U W=10U AS=2.95P AD=3.475P PS=12.36U
 + PD=15.28U
-M$13 \$17 V_x_n \$5 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
+M$9 \$18 V_x_p \$4 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
 + PD=15.28U
-M$17 I_o_n V_w_n \$17 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=2.95P PS=15.28U
+M$13 I_o_n V_w_n \$17 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=2.95P PS=15.28U
 + PD=12.36U
-M$21 I_o_p V_w_p \$17 VSS nfet_03v3 L=0.5U W=10U AS=2.95P AD=3.475P PS=12.36U
+M$17 I_o_p V_w_p \$17 VSS nfet_03v3 L=0.5U W=10U AS=2.95P AD=3.475P PS=12.36U
 + PD=15.28U
-M$25 \$4 V_tail VSS VSS nfet_03v3 L=1U W=5U AS=2.175P AD=1.65P PS=9.24U PD=6.32U
-M$27 \$5 V_tail VSS VSS nfet_03v3 L=1U W=5U AS=1.65P AD=2.175P PS=6.32U PD=9.24U
-R$29 \$4 \$5 VSS 15400 ppolyf_u_1k L=46.2U W=3U
+M$21 \$4 V_tail VSS VSS nfet_03v3 L=1U W=5U AS=2.175P AD=1.65P PS=9.24U PD=6.32U
+M$23 \$5 V_tail VSS VSS nfet_03v3 L=1U W=5U AS=1.65P AD=2.175P PS=6.32U PD=9.24U
+M$25 \$17 V_x_n \$5 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
++ PD=15.28U
+R$31 \$5 \$4 VSS 15400 ppolyf_u_1k L=46.2U W=3U
 .ENDS gilbert_multiplier_current

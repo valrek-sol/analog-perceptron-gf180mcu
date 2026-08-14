@@ -2,7 +2,7 @@
 <report-database>
  <description>GF180 DENSITY DRC Run Report at</description>
  <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/perceptron/top.klay.gds</original-file>
- <generator>drc: script='/foss/pdks/ciel/gf180mcu/versions/7b70722e33c03fcb5dabcf4d479fb0822d9251c9/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
+ <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
  <top-cell>perceptron</top-cell>
  <tags>
  </tags>
