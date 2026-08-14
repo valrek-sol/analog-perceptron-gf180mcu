@@ -68,12 +68,14 @@ value="
 
   * === AC Analysis (Stability & Bandwidth) ===
   * Injecting AC signal into I_X1
-  alter @I_X1[acmag] = 1
+  alter I_X1 = 25u
+  alter @I_X1[acmag] = 25u
   alter V_W1 = 1.85
   ac dec 20 1 1G
   * wrdata exports real and imaginary parts for AC.
   wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_ac_perceptron.txt v(V_out_perceptron)
   alter @I_X1[acmag] = 0 $ Clear AC magnitude
+  alter I_X1 = 0
 
   * === Return to global environment before loops ===
   setplot const
