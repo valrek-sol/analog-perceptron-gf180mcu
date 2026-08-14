@@ -1,5 +1,7 @@
 # Programmable Analog Perceptron
 
+(this repo is in WIP state - Layout information needs to be added in readmes..)
+
 ## Goal
 
 This project is made by utilizing GF180mcu PDK, for the 2026 SSCS PICO Chipathon. Objective primarily is to learn, and tapeout if possible.
