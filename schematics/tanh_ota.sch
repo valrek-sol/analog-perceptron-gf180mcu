@@ -119,7 +119,7 @@ C {iopin.sym} 750 -660 3 0 {name=p12 lab=V_ref}
 C {lab_pin.sym} 730 -610 0 0 {name=p13 sig_type=std_logic lab=VSS}
 C {symbols/ppolyf_u_1k.sym} 750 -610 0 0 {name=R6
 W=3e-6
-L=74.4e-6
+L=45e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}
