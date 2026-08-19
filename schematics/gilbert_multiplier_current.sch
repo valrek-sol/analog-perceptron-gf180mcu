@@ -5,16 +5,16 @@ V {}
 S {}
 F {}
 E {}
+P 4 1 200 40 {}
 N 120 -300 380 -300 {lab=#net1}
 N 600 -300 860 -300 {lab=#net2}
 N 360 -90 360 -10 {lab=#net3}
 N 620 -90 620 -10 {lab=#net4}
-N 300 20 320 20 {lab=V_tail}
-N 300 -30 300 20 {lab=V_tail}
-N 300 -30 680 -30 {lab=V_tail}
-N 680 -30 680 20 {lab=V_tail}
-N 660 20 680 20 {lab=V_tail}
-N 220 20 300 20 {lab=V_tail}
+N 300 20 320 20 {lab=#net5}
+N 300 -30 300 20 {lab=#net5}
+N 300 -30 680 -30 {lab=#net5}
+N 680 -30 680 20 {lab=#net5}
+N 660 20 680 20 {lab=#net5}
 N 360 50 360 80 {lab=VSS}
 N 360 80 620 80 {lab=VSS}
 N 620 50 620 80 {lab=VSS}
@@ -46,6 +46,15 @@ N 420 -330 560 -330 {lab=V_w_n}
 N 20 -280 490 -280 {lab=V_w_n}
 N 490 -330 490 -280 {lab=V_w_n}
 N 940 -330 1030 -330 {lab=V_w_p}
+N 160 20 220 20 {lab=#net5}
+N 130 40 130 80 {lab=VSS}
+N 130 80 220 80 {lab=VSS}
+N 220 50 230 50 {lab=VSS}
+N 230 50 230 80 {lab=VSS}
+N 220 80 230 80 {lab=VSS}
+N 230 80 360 80 {lab=VSS}
+N 180 20 180 50 {lab=#net5}
+N 220 20 300 20 {lab=#net5}
 C {symbols/nfet_03v3.sym} 340 -180 0 0 {name=M1
 L=0.5u
 W=10u
@@ -76,7 +85,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 100 -330 0 0 {name=M3
 L=0.5u
-W=10u
+W=20u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -90,7 +99,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 400 -330 0 1 {name=M4
 L=0.5u
-W=10u
+W=20u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -104,7 +113,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 580 -330 0 0 {name=M5
 L=0.5u
-W=10u
+W=20u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -118,7 +127,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 880 -330 0 1 {name=M6
 L=0.5u
-W=10u
+W=20u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -132,7 +141,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 340 20 0 0 {name=M7
 L=1u
-W=5u
+W=8u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -146,7 +155,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 640 20 0 1 {name=M8
 L=1u
-W=5u
+W=8u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -160,7 +169,7 @@ spiceprefix=X
 }
 C {ipin.sym} 220 -180 0 0 {name=p1 lab=V_x_p}
 C {ipin.sym} 220 -130 0 0 {name=p2 lab=V_x_n}
-C {ipin.sym} 220 20 0 0 {name=p3 lab=V_tail}
+C {ipin.sym} 100 20 0 0 {name=p3 lab=V_tail}
 C {iopin.sym} 490 110 1 0 {name=p4 lab=VSS
 }
 C {ipin.sym} 20 -330 0 0 {name=p5 lab=V_w_p
@@ -196,3 +205,23 @@ C {lab_pin.sym} 490 -70 1 0 {name=p20 sig_type=std_logic lab=VSS
 }
 C {lab_pin.sym} 1030 -330 2 0 {name=p21 sig_type=std_logic lab=V_w_p
 }
+C {symbols/nfet_03v3.sym} 200 50 0 0 {name=M9
+L=1u
+W=2u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
+C {symbols/ppolyf_u_1k.sym} 130 20 3 0 {name=R3
+W=3e-6
+L=6e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}

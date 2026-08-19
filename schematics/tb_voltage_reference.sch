@@ -17,8 +17,9 @@ format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
-.lib $::180MCU_MODELS/sm141064.ngspice res_typical
-* .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
+* .lib $::180MCU_MODELS/sm141064.ngspice res_typical
+.lib $::180MCU_MODELS/sm141064.ngspice res_statistical
+.temp 27
 "}
 C {code_shown.sym} 820 -470 0 0 {name=COMMANDS
 value="

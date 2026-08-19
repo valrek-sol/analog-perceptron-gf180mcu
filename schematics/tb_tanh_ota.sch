@@ -5,13 +5,11 @@ V {}
 S {}
 F {}
 E {}
-N 640 -180 740 -180 {lab=0}
-N 180 -180 640 -180 {lab=0}
+N 600 -180 740 -180 {lab=0}
 N 440 -180 440 -150 {lab=0}
 N 560 -290 600 -290 {lab=0}
 N 600 -290 600 -180 {lab=0}
-N 100 -180 180 -180 {lab=0}
-N 20 -180 100 -180 {lab=0}
+N 20 -180 440 -180 {lab=0}
 N 100 -330 100 -240 {lab=#net1}
 N 100 -330 260 -330 {lab=#net1}
 N 640 -330 640 -240 {lab=#net2}
@@ -20,15 +18,16 @@ N 560 -350 740 -350 {lab=#net3}
 N 740 -350 740 -240 {lab=#net3}
 N 20 -350 260 -350 {lab=#net4}
 N 20 -350 20 -240 {lab=#net4}
+N 440 -180 600 -180 {lab=0}
 C {analog-perceptron-gf180mcu/schematics/tanh_ota.sym} 410 -320 0 0 {name=x1}
 C {devices/code_shown.sym} 910 -260 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
-.lib $::180MCU_MODELS/sm141064.ngspice ss
+.lib $::180MCU_MODELS/sm141064.ngspice typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_typical
-.lib $::180MCU_MODELS/sm141064.ngspice res_ss
-.temp -40
+.lib $::180MCU_MODELS/sm141064.ngspice res_statistical
+.temp 27
 "}
 C {code.sym} 890 -390 0 0 {name=COMMANDS
 value="

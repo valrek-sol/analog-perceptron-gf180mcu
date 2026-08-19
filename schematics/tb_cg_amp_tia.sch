@@ -25,6 +25,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_typical
 .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
+.temp 27
 "}
 C {code_shown.sym} 730 -570 0 0 {name=COMMANDS
 value="

@@ -37,7 +37,8 @@ N 710 -270 710 -230 {lab=0}
 N 710 -230 770 -230 {lab=0}
 N 840 -170 840 -70 {lab=0}
 N 250 -100 320 -100 {lab=0}
-N 320 -230 320 -160 {lab=#net6}
+N 320 -180 320 -160 {lab=#net6}
+N 320 -230 320 -180 {lab=#net6}
 N 320 -230 410 -230 {lab=#net6}
 C {vsource.sym} 180 -130 0 0 {name=V_X_P value=1.25 savecurrent=false}
 C {vsource.sym} 250 -130 0 0 {name=V_X_N value=1.15 savecurrent=false}
@@ -99,10 +100,10 @@ C {devices/code_shown.sym} 390 -490 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
-.lib $::180MCU_MODELS/sm141064.ngspice ff
+.lib $::180MCU_MODELS/sm141064.ngspice typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_typical
-.lib $::180MCU_MODELS/sm141064.ngspice res_ff
-.temp 125
+.lib $::180MCU_MODELS/sm141064.ngspice res_statistical
+.temp 27
 "}
 C {vsource.sym} 940 -140 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 560 -270 0 0 {name=x1}
