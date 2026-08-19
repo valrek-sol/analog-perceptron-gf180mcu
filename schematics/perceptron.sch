@@ -30,11 +30,6 @@ N 2000 -300 2000 -80 {lab=VSS}
 N 1980 -300 2000 -300 {lab=VSS}
 N 580 -460 580 -80 {lab=VSS}
 N 550 -460 580 -460 {lab=VSS}
-N 1040 -210 1040 -80 {lab=VSS}
-N 1060 -340 1060 -80 {lab=VSS}
-N 1040 -340 1060 -340 {lab=VSS}
-N 1040 -480 1080 -480 {lab=VSS}
-N 1080 -480 1080 -80 {lab=VSS}
 N 1080 -80 1340 -80 {lab=VSS}
 N 1060 -80 1080 -80 {lab=VSS}
 N 1040 -80 1060 -80 {lab=VSS}
@@ -51,22 +46,11 @@ N 1980 -360 2000 -360 {lab=VDD}
 N 1300 -470 1320 -470 {lab=VSS}
 N 1300 -470 1300 -80 {lab=VSS}
 N 1120 -320 1280 -320 {lab=V_o_n}
-N 220 -500 250 -500 {lab=V_1_25}
-N 220 -500 220 -360 {lab=V_1_25}
-N 220 -360 250 -360 {lab=V_1_25}
-N 160 -480 240 -480 {lab=I_x1}
-N 160 -340 250 -340 {lab=I_x2}
-N 240 -480 250 -480 {lab=I_x1}
 N 600 -500 600 -360 {lab=V_1_25}
 N 580 -500 600 -500 {lab=V_1_25}
 N 700 -190 740 -190 {lab=V_1_15}
 N 600 -360 600 -210 {lab=V_1_25}
 N 600 -210 740 -210 {lab=V_1_25}
-N 670 -440 740 -440 {lab=V_1_65}
-N 670 -440 670 -300 {lab=V_1_65}
-N 670 -300 740 -300 {lab=V_1_65}
-N 670 -300 670 -170 {lab=V_1_65}
-N 670 -170 740 -170 {lab=V_1_65}
 N 630 -500 740 -500 {lab=V_1_65}
 N 630 -500 630 -360 {lab=V_1_65}
 N 630 -360 740 -360 {lab=V_1_65}
@@ -109,9 +93,6 @@ N 1560 -470 1560 -80 {lab=VSS}
 N 1520 -660 1520 -500 {lab=VDD}
 N 160 -620 1340 -620 {lab=V_shift}
 N 1340 -620 1340 -500 {lab=V_shift}
-N 630 -440 670 -440 {lab=V_1_65}
-N 220 -580 600 -580 {lab=V_1_25}
-N 220 -580 220 -500 {lab=V_1_25}
 N 960 -660 1340 -660 {lab=VDD}
 N 960 -740 960 -660 {lab=VDD}
 N 900 -740 900 -640 {lab=V_1_15}
@@ -132,6 +113,16 @@ N 880 -740 880 -720 {lab=V_0_7}
 N 880 -720 1660 -720 {lab=V_0_7}
 N 1660 -720 1660 -320 {lab=V_0_7}
 N 1340 -760 1340 -660 {lab=VDD}
+N 1040 -480 1100 -480 {lab=VSS}
+N 1040 -210 1100 -210 {lab=VSS}
+N 1040 -340 1100 -340 {lab=VSS}
+N 1100 -480 1100 -80 {lab=VSS}
+N 630 -440 740 -440 {lab=V_1_65}
+N 630 -300 740 -300 {lab=V_1_65}
+N 630 -170 740 -170 {lab=V_1_65}
+N 630 -240 630 -170 {lab=V_1_65}
+N 160 -500 250 -500 {lab=I_x1}
+N 160 -360 250 -360 {lab=I_x2}
 C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 400 -480 0 0 {name=x1}
 C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 400 -340 0 0 {name=x2}
 C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 890 -480 0 0 {name=x_g1}
@@ -146,8 +137,8 @@ spiceprefix=X
 m=1}
 C {iopin.sym} 1340 -760 3 0 {name=p1 lab=VDD}
 C {iopin.sym} 1340 -70 1 0 {name=p2 lab=VSS}
-C {ipin.sym} 160 -480 0 0 {name=p4 lab=I_x1}
-C {ipin.sym} 160 -340 0 0 {name=p5 lab=I_x2}
+C {ipin.sym} 160 -500 0 0 {name=p4 lab=I_x1}
+C {ipin.sym} 160 -360 0 0 {name=p5 lab=I_x2}
 C {ipin.sym} 160 -220 0 0 {name=p10 lab=V_w1}
 C {ipin.sym} 160 -140 0 0 {name=p11 lab=V_w2}
 C {ipin.sym} 160 -60 0 0 {name=p12 lab=V_b}

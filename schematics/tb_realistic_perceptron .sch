@@ -213,9 +213,10 @@ C {devices/code_shown.sym} 340 -590 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
-.lib $::180MCU_MODELS/sm141064.ngspice typical
+.lib $::180MCU_MODELS/sm141064.ngspice ff
 * .lib $::180MCU_MODELS/sm141064.ngspice res_typical
-.lib $::180MCU_MODELS/sm141064.ngspice res_statistical
+.lib $::180MCU_MODELS/sm141064.ngspice res_ff
+.temp 125
 "}
 C {vsource.sym} -60 -150 0 0 {name=V_Shift value=3.3 savecurrent=false}
 C {analog-perceptron-gf180mcu/schematics/perceptron.sym} 480 -350 0 0 {name=x1}
