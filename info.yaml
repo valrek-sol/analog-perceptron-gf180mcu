@@ -42,3 +42,5 @@ pins:
   - name: V_w2
     io_type: analog
     secondary_esd: true
+  - name : VSS
+    io_type: power
