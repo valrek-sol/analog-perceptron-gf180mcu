@@ -16,7 +16,7 @@ project:
   team: "[B12] Electron Ensemble"                      # Your Team name
   discord: "valrek-sol"                   # Optional: Discord username (for support / communication)
   description: "A sensor agnostic fully analog single neuron perceptron"  # Short one-line description
-  lvs_config: "./lvs/lvs_config.json"
+  lvs_config: "lvs/lvs_config.json"
 
 pins: 
   - name: VSS
@@ -41,6 +41,6 @@ pins:
     secondary_esd: true
   - name: V_out_perceptron 
     io_type: analog
-    secondary_esd: false
+    secondary_esd: true
   - name: VDD
     io_type: power
