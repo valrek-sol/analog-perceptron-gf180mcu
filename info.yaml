@@ -20,7 +20,7 @@ project:
 
 pins: 
   - name: VSS
-    io_type: power
+    io_type: ground
   - name: V_w2
     io_type: analog
     secondary_esd: true
