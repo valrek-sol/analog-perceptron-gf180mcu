@@ -1,4 +1,4 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 14/08/2026 13:31
+* Extracted by KLayout with GF180MCU LVS runset on : 24/08/2026 07:26
 
 .SUBCKT perceptron V_w2 I_x2 V_b I_x1 VDD V_out_perceptron V_shift V_w1 VSS
 X$1 \$7 \$12 \$20 \$2 VDD VSS voltage_reference
