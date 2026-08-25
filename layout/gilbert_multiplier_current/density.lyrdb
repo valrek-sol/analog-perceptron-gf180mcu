@@ -8,12 +8,6 @@
  </tags>
  <categories>
   <category>
-   <name>DCF.1b</name>
-   <description>DCF.1b : Global density for active layers (COMP+ Dummy COMP) shall be &gt;= 25%</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
    <name>M1.4</name>
    <description>M1.4 : Metal1 coverage over the entire die shall be &gt;30%
               (Refer to section 13.0 for Dummy Metal fill guidelines.
@@ -74,18 +68,6 @@
  <items>
   <item>
    <tags/>
-   <category>'DCF.1b'</category>
-   <cell>gilbert_multiplier_current</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
    <category>'M1.4'</category>
    <cell>gilbert_multiplier_current</cell>
    <visited>false</visited>
@@ -93,7 +75,7 @@
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
+    <value>polygon: (5.81,1.94;5.81,52.85;22.49,52.85;22.49,1.94)</value>
    </values>
   </item>
   <item>
@@ -105,7 +87,7 @@
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
+    <value>polygon: (5.81,1.94;5.81,52.85;22.49,52.85;22.49,1.94)</value>
    </values>
   </item>
   <item>
@@ -117,7 +99,7 @@
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
+    <value>polygon: (5.81,1.94;5.81,52.85;22.49,52.85;22.49,1.94)</value>
    </values>
   </item>
   <item>
@@ -129,7 +111,7 @@
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
+    <value>polygon: (5.81,1.94;5.81,52.85;22.49,52.85;22.49,1.94)</value>
    </values>
   </item>
   <item>
@@ -141,7 +123,7 @@
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
+    <value>polygon: (5.81,1.94;5.81,52.85;22.49,52.85;22.49,1.94)</value>
    </values>
   </item>
   <item>
@@ -153,7 +135,7 @@
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.39,1.65;1.39,33.725;26.11,33.725;26.11,1.65)</value>
+    <value>polygon: (5.81,1.94;5.81,52.85;22.49,52.85;22.49,1.94)</value>
    </values>
   </item>
  </items>
