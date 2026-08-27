@@ -1,4 +1,4 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 25/08/2026 19:12
+* Extracted by KLayout with GF180MCU LVS runset on : 26/08/2026 20:58
 
 .SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_n V_w_p I_o_n I_o_p
 + VSS
