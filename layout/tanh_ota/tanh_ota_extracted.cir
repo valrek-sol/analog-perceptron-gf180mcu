@@ -1,14 +1,18 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 14/08/2026 11:53
+* Extracted by KLayout with GF180MCU LVS runset on : 27/08/2026 14:39
 
-.SUBCKT tanh_ota V_ref VDD V_out V_bias V_in_n V_in_p VSS
-M$1 \$5 V_in_p \$2 VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=3.3P PS=16.74U
-+ PD=11.32U
-M$3 V_out V_in_n \$2 VSS nfet_03v3 L=0.5U W=10U AS=3.3P AD=4.35P PS=11.32U
+.SUBCKT tanh_ota V_out V_ref V_in_p V_in_n VDD VSS
+M$1 \$6 VDD VDD VDD pfet_03v3 L=0.5U W=10U AS=4.55P AD=4.55P PS=16.82U PD=16.82U
+M$2 VDD \$6 \$6 VDD pfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=22.08U PD=22.08U
+M$3 V_out \$6 VDD VDD pfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=22.08U PD=22.08U
+M$11 \$6 VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=16.74U
 + PD=16.74U
-M$5 \$2 V_bias VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=16.74U
-+ PD=16.74U
-R$8 V_out V_ref VSS 24800 ppolyf_u_1k L=74.4U W=3U
-M$13 V_out \$5 VDD VDD pfet_03v3 L=0.5U W=20U AS=9.1P AD=9.1P PS=31.82U
-+ PD=31.82U
-M$15 \$5 \$5 VDD VDD pfet_03v3 L=0.5U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
+M$12 \$5 V_in_p \$6 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
++ PD=11.04U
+M$13 V_out V_in_n \$5 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
++ PD=11.04U
+R$17 V_out V_ref VSS 15000 ppolyf_u_1k L=45U W=3U
+R$20 \$2 VDD VSS 36666.6666667 ppolyf_u_1k L=110U W=3U
+M$25 VSS VSS VSS VSS nfet_03v3 L=0.5U W=3U AS=1.305P AD=1.305P PS=6.24U PD=6.24U
+M$26 \$2 \$2 VSS VSS nfet_03v3 L=0.5U W=30U AS=7.8P AD=7.8P PS=40.4U PD=40.4U
+M$36 \$5 \$2 VSS VSS nfet_03v3 L=0.5U W=3U AS=0.78P AD=0.78P PS=4.04U PD=4.04U
 .ENDS tanh_ota

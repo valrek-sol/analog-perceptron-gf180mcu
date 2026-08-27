@@ -131,7 +131,7 @@ if res:
 # ---------------------------------------------------------------
 # 3. Gilbert -- family of curves ("spider")
 # ---------------------------------------------------------------
-vxp_labels = [1.10, 1.15, 1.20, 1.25, 1.30]
+vxp_labels = [1.05, 1.10, 1.15, 1.20, 1.25]
 res = load_stacked("gilbert_family_sweep.txt", 101, vxp_labels)
 if res:
     vwp_f, vdiff_f = res

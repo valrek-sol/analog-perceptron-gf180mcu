@@ -1,20 +1,29 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 24/08/2026 07:25
+* Extracted by KLayout with GF180MCU LVS runset on : 26/08/2026 20:58
 
-.SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_p I_o_n I_o_p V_w_n
+.SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_n V_w_p I_o_n I_o_p
 + VSS
-M$1 I_o_n V_w_p \$18 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=2.95P PS=15.28U
-+ PD=12.36U
-M$5 I_o_p V_w_n \$18 VSS nfet_03v3 L=0.5U W=10U AS=2.95P AD=3.475P PS=12.36U
-+ PD=15.28U
-M$9 \$18 V_x_p \$4 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
-+ PD=15.28U
-M$13 I_o_n V_w_n \$17 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=2.95P PS=15.28U
-+ PD=12.36U
-M$17 I_o_p V_w_p \$17 VSS nfet_03v3 L=0.5U W=10U AS=2.95P AD=3.475P PS=12.36U
-+ PD=15.28U
-M$21 \$4 V_tail VSS VSS nfet_03v3 L=1U W=5U AS=2.175P AD=1.65P PS=9.24U PD=6.32U
-M$23 \$5 V_tail VSS VSS nfet_03v3 L=1U W=5U AS=1.65P AD=2.175P PS=6.32U PD=9.24U
-M$25 \$17 V_x_n \$5 VSS nfet_03v3 L=0.5U W=10U AS=3.475P AD=3.475P PS=15.28U
-+ PD=15.28U
-R$31 \$5 \$4 VSS 15400 ppolyf_u_1k L=46.2U W=3U
+M$1 I_o_n VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=18.48U
++ PD=18.48U
+M$2 \$10 V_w_p I_o_n VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
++ PD=24.16U
+M$3 I_o_p V_w_n \$10 VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
++ PD=24.16U
+M$12 \$23 V_w_n I_o_n VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
++ PD=24.16U
+M$13 I_o_p V_w_p \$23 VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
++ PD=24.16U
+M$21 I_o_p VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=18.48U
++ PD=18.48U
+M$41 \$3 VSS VSS VSS nfet_03v3 L=1U W=8U AS=3.48P AD=3.48P PS=13.74U PD=13.74U
+M$42 VSS V_tail \$3 VSS nfet_03v3 L=1U W=8U AS=2.08P AD=2.08P PS=9.04U PD=9.04U
+M$43 \$4 V_tail VSS VSS nfet_03v3 L=1U W=8U AS=2.08P AD=2.08P PS=9.04U PD=9.04U
+M$47 \$10 VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=16.74U
++ PD=16.74U
+M$48 \$3 V_x_p \$10 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
++ PD=11.04U
+M$51 \$23 VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=16.74U
++ PD=16.74U
+M$52 \$4 V_x_n \$23 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
++ PD=11.04U
+R$55 \$3 \$4 VSS 15400 ppolyf_u_1k L=46.2U W=3U
 .ENDS gilbert_multiplier_current

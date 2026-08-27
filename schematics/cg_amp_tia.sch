@@ -8,11 +8,13 @@ E {}
 N 270 -340 270 -280 {lab=V_out}
 N 270 -220 270 -210 {lab=I_in}
 N 270 -210 270 -140 {lab=I_in}
-N 150 -250 230 -250 {lab=V_bias}
+N 150 -250 230 -250 {lab=V_ref}
 N 270 -310 400 -310 {lab=V_out}
 N 270 -250 370 -250 {lab=VSS}
 N 370 -250 370 -130 {lab=VSS}
 N 150 -140 270 -140 {lab=I_in}
+N 150 -400 270 -400 {lab=V_ref}
+N 150 -400 150 -250 {lab=V_ref}
 C {symbols/nfet_03v3.sym} 250 -250 0 0 {name=M1
 L=0.5u
 W=5u
@@ -36,7 +38,6 @@ m=1}
 C {iopin.sym} 270 -400 3 0 {name=p1 lab=V_ref}
 C {iopin.sym} 370 -130 1 0 {name=p2 lab=VSS}
 C {ipin.sym} 150 -140 0 0 {name=p3 lab=I_in}
-C {ipin.sym} 150 -250 0 0 {name=p4 lab=V_bias}
 C {lab_pin.sym} 250 -370 0 0 {name=p5 sig_type=std_logic lab=VSS}
 C {opin.sym} 400 -310 0 0 {name=p6 lab=V_out
 }
