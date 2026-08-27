@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>DRC Run Report at</description>
- <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/tanh_ota/tanh_ota.gds</original-file>
+ <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/perceptron/top.klay.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>tanh_ota</top-cell>
+ <top-cell>perceptron</top-cell>
  <tags>
  </tags>
  <categories>
@@ -4041,7 +4041,7 @@
  </categories>
  <cells>
   <cell>
-   <name>tanh_ota</name>
+   <name>perceptron</name>
    <variant/>
    <layout-name/>
    <references>
