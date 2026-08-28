@@ -1,13 +1,13 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 28/08/2026 06:23
+* Extracted by KLayout with GF180MCU LVS runset on : 28/08/2026 12:50
 
-.SUBCKT perceptron V_w_2 I_x_2 V_b I_x_1 V_out_perceptron VDD V_w_1 V_shift VSS
-X$1 \$3 \$10 \$6 \$3 V_w_2 \$4 \$5 VSS gilbert_multiplier_current
+.SUBCKT perceptron V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
+X$1 \$3 \$10 \$6 \$3 V_w2 \$4 \$5 VSS gilbert_multiplier_current
 X$2 V_out_perceptron \$3 \$4 \$5 VDD VSS tanh_ota
-X$3 \$3 \$10 \$15 \$3 V_w_1 \$4 \$5 VSS gilbert_multiplier_current
+X$3 \$3 \$10 \$15 \$3 V_w1 \$4 \$5 VSS gilbert_multiplier_current
 X$4 VDD \$3 \$10 \$7 VSS voltage_reference
 X$5 \$3 \$10 \$7 \$3 V_b \$4 \$5 VSS gilbert_multiplier_current
-X$8 \$10 \$6 I_x_2 VSS cg_amp_tia
-X$9 \$10 \$15 I_x_1 VSS cg_amp_tia
+X$8 \$6 I_x2 \$10 VSS cg_amp_tia
+X$9 \$15 I_x1 \$10 VSS cg_amp_tia
 R$1 \$4 VDD VSS 2433.33333333 ppolyf_u_1k L=7.3U W=3U
 R$2 V_shift \$5 VSS 2433.33333333 ppolyf_u_1k L=7.3U W=3U
 .ENDS perceptron
@@ -30,12 +30,12 @@ M$36 \$5 \$2 VSS VSS nfet_03v3 L=0.5U W=3U AS=0.78P AD=0.78P PS=4.04U PD=4.04U
 .ENDS tanh_ota
 
 .SUBCKT voltage_reference VDD v_1_65 v_1_25 v_1_15 VSS
-M$1 \$18 VDD VDD VDD pfet_03v3 L=2U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
-M$2 VDD \$18 \$18 VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
-M$3 \$19 \$18 VDD VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
-M$7 \$16 VDD VDD VDD pfet_03v3 L=2U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
-M$8 VDD \$16 \$16 VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
-M$9 \$17 \$16 VDD VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
+M$1 \$16 VDD VDD VDD pfet_03v3 L=2U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
+M$2 VDD \$16 \$16 VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
+M$3 \$17 \$16 VDD VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
+M$7 \$18 VDD VDD VDD pfet_03v3 L=2U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
+M$8 VDD \$18 \$18 VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
+M$9 \$19 \$18 VDD VDD pfet_03v3 L=2U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
 M$13 \$36 VDD VDD VDD pfet_03v3 L=1U W=20U AS=9.1P AD=9.1P PS=31.82U PD=31.82U
 M$14 \$37 \$23 \$36 VDD pfet_03v3 L=1U W=20U AS=5.2P AD=5.2P PS=21.04U PD=21.04U
 M$15 v_1_15 v_1_15 \$37 VDD pfet_03v3 L=1U W=20U AS=5.2P AD=5.2P PS=21.04U
@@ -103,7 +103,7 @@ M$52 \$4 V_x_n \$23 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
 R$55 \$3 \$4 VSS 15400 ppolyf_u_1k L=46.2U W=3U
 .ENDS gilbert_multiplier_current
 
-.SUBCKT cg_amp_tia V_ref V_out I_in VSS
+.SUBCKT cg_amp_tia V_out I_in V_ref VSS
 M$1 V_out V_ref I_in VSS nfet_03v3 L=0.5U W=5U AS=2.175P AD=2.175P PS=9.24U
 + PD=9.24U
 R$3 V_out V_ref VSS 2700 ppolyf_u_1k L=8.1U W=3U
