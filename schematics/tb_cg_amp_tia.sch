@@ -5,18 +5,17 @@ V {}
 S {}
 F {}
 E {}
-N 330 -340 330 -320 {lab=0}
-N 330 -340 750 -340 {lab=0}
-N 750 -500 750 -400 {lab=#net1}
-N 680 -500 750 -500 {lab=#net1}
-N 680 -460 710 -460 {lab=0}
-N 710 -460 710 -340 {lab=0}
-N 330 -500 330 -400 {lab=#net2}
-N 330 -500 380 -500 {lab=#net2}
-C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 530 -480 0 0 {name=x1}
+N 460 -340 460 -320 {lab=0}
+N 460 -340 750 -340 {lab=0}
+N 560 -440 560 -340 {lab=0}
+N 560 -550 750 -550 {lab=#net1}
+N 750 -550 750 -400 {lab=#net1}
+N 460 -480 500 -480 {lab=#net2}
+N 460 -480 460 -400 {lab=#net2}
+C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 440 -350 0 0 {name=x1}
 C {vsource.sym} 750 -370 0 0 {name=V_SUPPLY value=1.25 savecurrent=false}
-C {gnd.sym} 330 -320 0 0 {name=l1 lab=0}
-C {isource.sym} 330 -370 0 0 {name=I_SENSOR value=50u}
+C {gnd.sym} 460 -320 0 0 {name=l1 lab=0}
+C {isource.sym} 460 -370 0 0 {name=I_SENSOR value=50u}
 C {lab_pin.sym} 680 -480 2 0 {name=p1 sig_type=std_logic lab=V_out}
 C {devices/code_shown.sym} 500 -210 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"

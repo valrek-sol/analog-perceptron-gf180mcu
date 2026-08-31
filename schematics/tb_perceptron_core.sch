@@ -7,7 +7,7 @@ F {}
 E {}
 N 660 -160 660 -100 {lab=0}
 N 660 -160 880 -160 {lab=0}
-N 830 -420 940 -420 {lab=V_out_perceptron}
+N 830 -390 940 -390 {lab=V_out_perceptron}
 N 210 -160 290 -160 {lab=0}
 N 420 -160 660 -160 {lab=0}
 N 290 -160 420 -160 {lab=0}
@@ -24,13 +24,12 @@ N 430 -360 430 -220 {lab=#net5}
 N 430 -360 530 -360 {lab=#net5}
 N 500 -340 530 -340 {lab=#net6}
 N 500 -340 500 -220 {lab=#net6}
-N 830 -440 880 -440 {lab=#net7}
-N 880 -440 880 -220 {lab=#net7}
-N 830 -400 840 -400 {lab=0}
-N 840 -400 840 -160 {lab=0}
+N 730 -310 730 -160 {lab=0}
+N 730 -470 880 -470 {lab=#net7}
+N 880 -470 880 -220 {lab=#net7}
 C {vsource.sym} 880 -190 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {gnd.sym} 660 -100 0 0 {name=l1 lab=0}
-C {lab_pin.sym} 940 -420 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
+C {lab_pin.sym} 940 -390 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
 C {isource.sym} 290 -190 0 0 {name=I_X1 value=25u}
 C {isource.sym} 430 -190 0 0 {name=I_X2 value=25u
 }
@@ -188,5 +187,5 @@ value="
 * .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 "}
 C {vsource.sym} 140 -190 0 0 {name=V_Shift value=3.3 savecurrent=false}
-C {analog-perceptron-gf180mcu/schematics/perceptron.sym} 680 -390 0 0 {name=x1}
+C {analog-perceptron-gf180mcu/schematics/perceptron_core.sym} 680 -390 0 0 {name=x1}
 C {title.sym} 160 0 0 0 {name=l2 author="Guru Charan"}

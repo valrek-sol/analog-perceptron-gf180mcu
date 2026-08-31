@@ -35,19 +35,17 @@ value="
   print v(V_out_perceptron)
 .endc
 "}
-C {devices/code_shown.sym} 340 -610 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} 340 -590 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 .lib $::180MCU_MODELS/sm141064.ngspice res_typical
-.lib $::180MCU_MODELS/sm141064.ngspice diode_typical
-.lib $::180MCU_MODELS/sm141064.ngspice moscap_typical
 * .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 "}
 C {vsource.sym} 880 -180 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
-C {gnd.sym} 660 -90 0 0 {name=l2 lab=0}
-C {lab_pin.sym} 940 -380 2 0 {name=p2 sig_type=std_logic lab=V_out_perceptron}
+C {gnd.sym} 660 -90 0 0 {name=l1 lab=0}
+C {lab_pin.sym} 940 -380 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
 C {isource.sym} 290 -180 0 0 {name=I_X1 value=25u}
 C {isource.sym} 430 -180 0 0 {name=I_X2 value=25u
 }
@@ -55,5 +53,5 @@ C {vsource.sym} 210 -180 0 0 {name=V_W1 value=1.85 savecurrent=false}
 C {vsource.sym} 500 -180 0 0 {name=V_W2 value=1.65 savecurrent=false}
 C {vsource.sym} 360 -180 0 0 {name=V_B value=1.65 savecurrent=false}
 C {vsource.sym} 140 -180 0 0 {name=V_Shift value=3.3 savecurrent=false}
-C {analog-perceptron-gf180mcu/schematics/perceptron.sym} 680 -380 0 0 {name=x1}
-C {title.sym} 160 0 0 0 {name=l3 author="Guru Charan"}
+C {analog-perceptron-gf180mcu/schematics/perceptron_core.sym} 680 -380 0 0 {name=x1}
+C {title.sym} 160 0 0 0 {name=l2 author="Guru Charan"}
