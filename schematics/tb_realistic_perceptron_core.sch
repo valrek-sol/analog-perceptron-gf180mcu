@@ -35,7 +35,7 @@ N 280 -210 340 -210 {lab=#net3}
 C {vsource.sym} 980 -180 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
 C {gnd.sym} 760 -90 0 0 {name=l1 lab=0}
 C {lab_pin.sym} 1140 -380 2 0 {name=p1 sig_type=std_logic lab=V_out_perceptron}
-C {code.sym} 400 -630 0 0 {name=COMMANDS
+C {code.sym} 200 -620 0 0 {name=COMMANDS
 value="
 .control
   * --- start from neutral ---
@@ -68,6 +68,7 @@ value="
   alter I_X1 = 0
 
   * === Return to global environment before loops ===
+  reset
   setplot const
 
   * === Graph 1: Weight sweep (inhibitory / neutral / excitatory) ===
@@ -199,7 +200,7 @@ value="
   wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_opsweep_perceptron_chain_ix2.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
 .endc
 "}
-C {devices/code_shown.sym} 640 -620 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} 420 -630 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice

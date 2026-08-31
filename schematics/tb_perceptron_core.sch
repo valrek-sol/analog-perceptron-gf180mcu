@@ -161,9 +161,7 @@ value="
   alter V_B  = 1.65
   alter I_X1 = 0
   alter I_X2 = 0
-  * === OP-SWEEP DIAGNOSTIC #2: all devices, I_X2 swept,
-  *     I_X1 held at mid-scale (25uA) so TIA1 stays validly biased too,
-  *     and TIA2 actually carries current for once ===
+  * === OP-SWEEP DIAGNOSTIC #2: all devices.
   alter V_W1 = 1.85
   alter V_W2 = 1.65
   alter V_B  = 1.65
