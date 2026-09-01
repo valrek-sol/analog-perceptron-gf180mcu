@@ -1,14 +1,15 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 01/09/2026 15:37
+* Extracted by KLayout with GF180MCU LVS runset on : 01/09/2026 16:22
 
-.SUBCKT perceptron VDD V_w2 I_x2 V_b I_x1 V_w1 V_shift V_out_perceptron VSS
-X$1 \$I16 V_out_perceptron VDD VSS io_secondary_5p0
+.SUBCKT perceptron VDD V_w2 V_w2$1 I_x2 I_x2$1 V_b I_x1 V_w1 V_shift
++ V_out_perceptron I_x1$1 V_b$1 V_w1$1 V_shift$1 V_out_perceptron$1 VSS
+X$1 V_out_perceptron$1 V_out_perceptron VDD VSS io_secondary_5p0
 X$2 V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS perceptron_core
-X$3 \$12 I_x1 VDD VSS io_secondary_5p0
-X$4 \$I18 V_w1 VDD VSS io_secondary_5p0
-X$5 \$I17 V_shift VDD VSS io_secondary_5p0
-X$6 \$I15 I_x2 VDD VSS io_secondary_5p0
-X$7 \$I14 V_b VDD VSS io_secondary_5p0
-X$8 \$I13 V_w2 VDD VSS io_secondary_5p0
+X$3 I_x1$1 I_x1 VDD VSS io_secondary_5p0
+X$4 V_w1$1 V_w1 VDD VSS io_secondary_5p0
+X$5 V_shift$1 V_shift VDD VSS io_secondary_5p0
+X$6 I_x2$1 I_x2 VDD VSS io_secondary_5p0
+X$7 V_b$1 V_b VDD VSS io_secondary_5p0
+X$8 V_w2$1 V_w2 VDD VSS io_secondary_5p0
 .ENDS perceptron
 
 .SUBCKT perceptron_core V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
