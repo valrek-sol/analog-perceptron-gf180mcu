@@ -5,7 +5,7 @@ V {}
 S {}
 F {}
 E {}
-P 4 5 960 -1990 960 -460 2500 -460 2500 -2000 960 -2000 {}
+P 4 5 960 -2000 960 -460 2500 -460 2500 -2000 960 -2000 {}
 P 4 5 940 -2020 940 -440 2520 -440 2520 -2020 940 -2020 {}
 N 1960 -1570 1960 -1200 {lab=#net1}
 N 1740 -1570 1740 -1290 {lab=#net2}
@@ -89,4 +89,4 @@ C {ipin.sym} 940 -770 0 0 {name=p6 lab=V_w2}
 C {ipin.sym} 1520 -2000 1 0 {name=p7 lab=V_w1}
 C {ipin.sym} 1740 -2000 1 0 {name=p8 lab=V_shift}
 C {opin.sym} 1960 -2000 3 0 {name=p9 lab=V_out_perceptron}
-C {title-2.sym} 10 0 0 0 {name=l1 author="Guru Charan" rev=1.0 lock=false}
+C {title-2.sym} 10 -10 0 0 {name=l1 author="Guru Charan" rev=1.0 lock=false}
