@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/analog-perceptron-gf180mcu/schematics/cg_amp_tia.sch
+** sch_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/cg_amp_tia.sch
 .subckt cg_amp_tia V_ref V_out I_in VSS
 *.PININFO V_ref:B VSS:B I_in:I V_out:O
 XM1 V_out V_ref I_in VSS nfet_03v3 L=0.5u W=5u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'

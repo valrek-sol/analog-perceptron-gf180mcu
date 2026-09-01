@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/analog-perceptron-gf180mcu/schematics/tanh_ota.sch
+** sch_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/tanh_ota.sch
 .subckt tanh_ota VDD V_ref V_out V_in_p V_in_n VSS
 *.PININFO VDD:B VSS:B V_in_p:I V_in_n:I V_out:O V_ref:B
 XM1 net2 V_in_p net1 VSS nfet_03v3 L=0.5u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'

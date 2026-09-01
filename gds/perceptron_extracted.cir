@@ -1,18 +1,36 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 28/08/2026 12:51
+* Extracted by KLayout with GF180MCU LVS runset on : 01/09/2026 16:22
 
-.SUBCKT perceptron V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
+.SUBCKT perceptron VDD V_w2 V_w2$1 I_x2 I_x2$1 V_b I_x1 V_w1 V_shift
++ V_out_perceptron I_x1$1 V_b$1 V_w1$1 V_shift$1 V_out_perceptron$1 VSS
+X$1 V_out_perceptron$1 V_out_perceptron VDD VSS io_secondary_5p0
+X$2 V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS perceptron_core
+X$3 I_x1$1 I_x1 VDD VSS io_secondary_5p0
+X$4 V_w1$1 V_w1 VDD VSS io_secondary_5p0
+X$5 V_shift$1 V_shift VDD VSS io_secondary_5p0
+X$6 I_x2$1 I_x2 VDD VSS io_secondary_5p0
+X$7 V_b$1 V_b VDD VSS io_secondary_5p0
+X$8 V_w2$1 V_w2 VDD VSS io_secondary_5p0
+.ENDS perceptron
+
+.SUBCKT perceptron_core V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
 X$1 \$3 \$10 \$6 \$3 V_w2 \$4 \$5 VSS gilbert_multiplier_current
-X$2 V_out_perceptron \$3 \$5 \$4 VDD VSS tanh_ota
+X$2 V_out_perceptron \$3 \$4 \$5 VDD VSS tanh_ota
 X$3 \$3 \$10 \$15 \$3 V_w1 \$4 \$5 VSS gilbert_multiplier_current
 X$4 VDD \$3 \$10 \$7 VSS voltage_reference
 X$5 \$3 \$10 \$7 \$3 V_b \$4 \$5 VSS gilbert_multiplier_current
-X$8 \$6 I_x2 \$10 VSS cg_amp_tia
-X$9 \$15 I_x1 \$10 VSS cg_amp_tia
+X$8 \$10 \$6 I_x2 VSS cg_amp_tia
+X$9 \$10 \$15 I_x1 VSS cg_amp_tia
 R$1 \$4 VDD VSS 2433.33333333 ppolyf_u_1k L=7.3U W=3U
 R$2 V_shift \$5 VSS 2433.33333333 ppolyf_u_1k L=7.3U W=3U
-.ENDS perceptron
+.ENDS perceptron_core
 
-.SUBCKT tanh_ota V_out V_ref V_in_p V_in_n VDD VSS
+.SUBCKT io_secondary_5p0 ASIG5V to_gate VDD VSS
+D$1 VSS to_gate diode_nd2ps_06v0 A=400P P=160U
+D$5 to_gate VDD diode_pd2nw_06v0 A=400P P=160U
+R$9 to_gate ASIG5V VDD 87.5 ppolyf_u L=10U W=40U
+.ENDS io_secondary_5p0
+
+.SUBCKT tanh_ota V_out V_ref V_in_n V_in_p VDD VSS
 M$1 \$6 VDD VDD VDD pfet_03v3 L=0.5U W=10U AS=4.55P AD=4.55P PS=16.82U PD=16.82U
 M$2 VDD \$6 \$6 VDD pfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=22.08U PD=22.08U
 M$3 V_out \$6 VDD VDD pfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=22.08U PD=22.08U
@@ -77,18 +95,18 @@ M$107 VSS \$1 \$11 VSS nfet_03v3 L=2U W=10U AS=2.6P AD=2.6P PS=12.08U PD=12.08U
 
 .SUBCKT gilbert_multiplier_current V_tail V_x_p V_x_n V_w_n V_w_p I_o_n I_o_p
 + VSS
-M$1 I_o_n VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=18.48U
+M$1 I_o_p VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=18.48U
 + PD=18.48U
-M$2 \$10 V_w_p I_o_n VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
+M$2 \$10 V_w_n I_o_p VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
 + PD=24.16U
-M$3 I_o_p V_w_n \$10 VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
+M$3 I_o_n V_w_p \$10 VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
 + PD=24.16U
-M$12 \$23 V_w_n I_o_n VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
-+ PD=24.16U
-M$13 I_o_p V_w_p \$23 VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
-+ PD=24.16U
-M$21 I_o_p VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=18.48U
+M$11 I_o_n VSS VSS VSS nfet_03v3 L=0.5U W=10U AS=4.35P AD=4.35P PS=18.48U
 + PD=18.48U
+M$22 \$23 V_w_n I_o_n VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
++ PD=24.16U
+M$23 I_o_p V_w_p \$23 VSS nfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=24.16U
++ PD=24.16U
 M$41 \$3 VSS VSS VSS nfet_03v3 L=1U W=8U AS=3.48P AD=3.48P PS=13.74U PD=13.74U
 M$42 VSS V_tail \$3 VSS nfet_03v3 L=1U W=8U AS=2.08P AD=2.08P PS=9.04U PD=9.04U
 M$43 \$4 V_tail VSS VSS nfet_03v3 L=1U W=8U AS=2.08P AD=2.08P PS=9.04U PD=9.04U
@@ -103,7 +121,7 @@ M$52 \$4 V_x_n \$23 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
 R$55 \$3 \$4 VSS 15400 ppolyf_u_1k L=46.2U W=3U
 .ENDS gilbert_multiplier_current
 
-.SUBCKT cg_amp_tia V_out I_in V_ref VSS
+.SUBCKT cg_amp_tia V_ref V_out I_in VSS
 M$1 V_out V_ref I_in VSS nfet_03v3 L=0.5U W=5U AS=2.175P AD=2.175P PS=9.24U
 + PD=9.24U
 R$3 V_out V_ref VSS 2700 ppolyf_u_1k L=8.1U W=3U
