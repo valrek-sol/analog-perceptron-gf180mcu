@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/analog-perceptron-gf180mcu/schematics/voltage_reference.sch
+** sch_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/voltage_reference.sch
 .subckt voltage_reference VDD v_1_65 v_1_25 v_1_15 VSS
 *.PININFO VDD:B VSS:B v_1_65:O v_1_15:O v_1_25:O
 XR1 V_I_1_65 VDD VSS ppolyf_u_1k r_width=3e-6 r_length=165e-6

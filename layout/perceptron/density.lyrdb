@@ -3,7 +3,7 @@
  <description>GF180 DENSITY DRC Run Report at</description>
  <original-file>/foss/designs/analog-perceptron-gf180mcu/layout/perceptron/top.klay.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>perceptron</top-cell>
+ <top-cell>perceptron_core</top-cell>
  <tags>
  </tags>
  <categories>
@@ -64,7 +64,7 @@
  </categories>
  <cells>
   <cell>
-   <name>perceptron</name>
+   <name>perceptron_core</name>
    <variant/>
    <layout-name/>
    <references>
@@ -75,7 +75,7 @@
   <item>
    <tags/>
    <category>'DCF.1b'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
@@ -87,7 +87,7 @@
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
@@ -99,7 +99,7 @@
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
@@ -111,7 +111,7 @@
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
@@ -123,7 +123,7 @@
   <item>
    <tags/>
    <category>'M4.4'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
@@ -135,7 +135,7 @@
   <item>
    <tags/>
    <category>'M5.4'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
@@ -147,7 +147,7 @@
   <item>
    <tags/>
    <category>'MT.3'</category>
-   <cell>perceptron</cell>
+   <cell>perceptron_core</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>

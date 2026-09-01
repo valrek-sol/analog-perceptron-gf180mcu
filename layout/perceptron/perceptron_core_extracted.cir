@@ -1,16 +1,16 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 28/08/2026 12:50
+* Extracted by KLayout with GF180MCU LVS runset on : 01/09/2026 15:21
 
-.SUBCKT perceptron V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
+.SUBCKT perceptron_core V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
 X$1 \$3 \$10 \$6 \$3 V_w2 \$4 \$5 VSS gilbert_multiplier_current
 X$2 V_out_perceptron \$3 \$4 \$5 VDD VSS tanh_ota
 X$3 \$3 \$10 \$15 \$3 V_w1 \$4 \$5 VSS gilbert_multiplier_current
 X$4 VDD \$3 \$10 \$7 VSS voltage_reference
 X$5 \$3 \$10 \$7 \$3 V_b \$4 \$5 VSS gilbert_multiplier_current
-X$8 \$6 I_x2 \$10 VSS cg_amp_tia
-X$9 \$15 I_x1 \$10 VSS cg_amp_tia
+X$8 \$10 \$6 I_x2 VSS cg_amp_tia
+X$9 \$10 \$15 I_x1 VSS cg_amp_tia
 R$1 \$4 VDD VSS 2433.33333333 ppolyf_u_1k L=7.3U W=3U
 R$2 V_shift \$5 VSS 2433.33333333 ppolyf_u_1k L=7.3U W=3U
-.ENDS perceptron
+.ENDS perceptron_core
 
 .SUBCKT tanh_ota V_out V_ref V_in_n V_in_p VDD VSS
 M$1 \$6 VDD VDD VDD pfet_03v3 L=0.5U W=10U AS=4.55P AD=4.55P PS=16.82U PD=16.82U
@@ -103,7 +103,7 @@ M$52 \$4 V_x_n \$23 VSS nfet_03v3 L=0.5U W=10U AS=2.6P AD=2.6P PS=11.04U
 R$55 \$3 \$4 VSS 15400 ppolyf_u_1k L=46.2U W=3U
 .ENDS gilbert_multiplier_current
 
-.SUBCKT cg_amp_tia V_out I_in V_ref VSS
+.SUBCKT cg_amp_tia V_ref V_out I_in VSS
 M$1 V_out V_ref I_in VSS nfet_03v3 L=0.5U W=5U AS=2.175P AD=2.175P PS=9.24U
 + PD=9.24U
 R$3 V_out V_ref VSS 2700 ppolyf_u_1k L=8.1U W=3U

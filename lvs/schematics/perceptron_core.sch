@@ -82,10 +82,6 @@ N 1320 -1090 1540 -1090 {lab=VSS}
 N 1540 -1140 1540 -1090 {lab=VSS}
 N 1540 -1090 1540 -800 {lab=VSS}
 N 1540 -800 1670 -800 {lab=VSS}
-C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 1030 -1020 0 0 {name=x_g1}
-C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 1030 -570 0 0 {name=x_g2}
-C {analog-perceptron-gf180mcu/schematics/gilbert_multiplier_current.sym} 1030 -790 0 0 {name=x_g3}
-C {analog-perceptron-gf180mcu/schematics/tanh_ota.sym} 1670 -900 0 0 {name=x_tanh}
 C {symbols/ppolyf_u_1k.sym} 1340 -1130 0 0 {name=R1
 W=3e-6
 L=7.3e-6
@@ -109,9 +105,13 @@ m=1}
 C {ipin.sym} 1340 -1210 1 0 {name=p15 lab=V_shift}
 C {lab_wire.sym} 1340 -920 0 0 {name=p16 sig_type=std_logic lab=V_o_p}
 C {lab_wire.sym} 1520 -870 0 0 {name=p17 sig_type=std_logic lab=V_o_n}
-C {analog-perceptron-gf180mcu/schematics/voltage_reference.sym} 1400 -560 0 1 {name=x3}
 C {lab_wire.sym} 1230 -610 0 0 {name=p6 sig_type=std_logic lab=V_1_25}
 C {lab_wire.sym} 1270 -820 0 0 {name=p7 sig_type=std_logic lab=V_1_65}
 C {lab_wire.sym} 1250 -540 0 0 {name=p8 sig_type=std_logic lab=V_1_15}
-C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 610 -880 0 0 {name=x1}
-C {analog-perceptron-gf180mcu/schematics/cg_amp_tia.sym} 610 -430 0 0 {name=x2}
+C {analog-perceptron-gf180mcu/lvs/schematics/cg_amp_tia.sym} 610 -880 0 0 {name=x1}
+C {analog-perceptron-gf180mcu/lvs/schematics/cg_amp_tia.sym} 610 -430 0 0 {name=x2}
+C {analog-perceptron-gf180mcu/lvs/schematics/gilbert_multiplier_current.sym} 1030 -1020 0 0 {name=x_g1}
+C {analog-perceptron-gf180mcu/lvs/schematics/gilbert_multiplier_current.sym} 1030 -570 0 0 {name=x_g2}
+C {analog-perceptron-gf180mcu/lvs/schematics/gilbert_multiplier_current.sym} 1030 -790 0 0 {name=x_g3}
+C {analog-perceptron-gf180mcu/lvs/schematics/voltage_reference.sym} 1400 -560 0 1 {name=x3}
+C {analog-perceptron-gf180mcu/lvs/schematics/tanh_ota.sym} 1670 -900 0 0 {name=x4}

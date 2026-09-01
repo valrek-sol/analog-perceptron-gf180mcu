@@ -58,28 +58,6 @@ N 2040 -1650 2240 -1650 {lab=VDD}
 N 1520 -2000 1520 -1770 {lab=V_w1}
 N 1740 -2000 1740 -1770 {lab=V_shift}
 N 1960 -2000 1960 -1770 {lab=V_out_perceptron}
-C {analog-perceptron-gf180mcu/schematics/perceptron_core.sym} 1810 -1200 0 0 {name=x1}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1380 -910 0 1 {name=xIO5
-spiceprefix=X
-}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1380 -690 0 1 {name=xIO1
-spiceprefix=X
-}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1380 -1350 0 1 {name=xIO2
-spiceprefix=X
-}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1380 -1130 0 1 {name=xIO3
-spiceprefix=X
-}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1440 -1570 1 1 {name=xIO4
-spiceprefix=X
-}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1660 -1570 1 1 {name=xIO6
-spiceprefix=X
-}
-C {analog-perceptron-gf180mcu/schematics/io_secondary_5p0.sym} 1880 -1570 1 1 {name=xIO7
-spiceprefix=X
-}
 C {iopin.sym} 2240 -2020 3 0 {name=p1 lab=VDD}
 C {iopin.sym} 940 -550 2 0 {name=p2 lab=VSS}
 C {ipin.sym} 940 -1430 0 0 {name=p3 lab=I_x1}
@@ -89,3 +67,25 @@ C {ipin.sym} 940 -770 0 0 {name=p6 lab=V_w2}
 C {ipin.sym} 1520 -2000 1 0 {name=p7 lab=V_w1}
 C {ipin.sym} 1740 -2000 1 0 {name=p8 lab=V_shift}
 C {opin.sym} 1960 -2000 3 0 {name=p9 lab=V_out_perceptron}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1380 -1350 0 1 {name=xIO2
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1380 -1130 0 1 {name=xIO3
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1380 -910 0 1 {name=xIO5
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1380 -690 0 1 {name=xIO1
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1440 -1570 1 1 {name=xIO4
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1660 -1570 1 1 {name=xIO6
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym} 1880 -1570 1 1 {name=xIO7
+spiceprefix=X
+}
+C {analog-perceptron-gf180mcu/lvs/schematics/perceptron_core.sym} 1810 -1200 0 0 {name=x1}

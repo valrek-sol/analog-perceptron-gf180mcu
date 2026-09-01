@@ -1,6 +1,6 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 27/08/2026 14:39
+* Extracted by KLayout with GF180MCU LVS runset on : 01/09/2026 15:00
 
-.SUBCKT tanh_ota V_out V_ref V_in_p V_in_n VDD VSS
+.SUBCKT tanh_ota V_out V_ref V_in_n V_in_p VDD VSS
 M$1 \$6 VDD VDD VDD pfet_03v3 L=0.5U W=10U AS=4.55P AD=4.55P PS=16.82U PD=16.82U
 M$2 VDD \$6 \$6 VDD pfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=22.08U PD=22.08U
 M$3 V_out \$6 VDD VDD pfet_03v3 L=0.5U W=20U AS=5.2P AD=5.2P PS=22.08U PD=22.08U

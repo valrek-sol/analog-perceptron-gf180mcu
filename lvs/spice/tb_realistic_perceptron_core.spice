@@ -1,28 +1,194 @@
-** sch_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/perceptron.sch
-.subckt perceptron VDD V_shift V_w1 I_x1 V_out_perceptron V_b I_x2 V_w2 VSS
-*.PININFO VDD:B VSS:B I_x1:I I_x2:I V_b:I V_w2:I V_w1:I V_shift:I V_out_perceptron:O
-XxIO2 VDD net4 I_x1 VSS io_secondary_5p0
-XxIO3 VDD net5 V_b VSS io_secondary_5p0
-XxIO5 VDD net6 I_x2 VSS io_secondary_5p0
-XxIO1 VDD net7 V_w2 VSS io_secondary_5p0
-XxIO4 VDD net3 V_w1 VSS io_secondary_5p0
-XxIO6 VDD net2 V_shift VSS io_secondary_5p0
-XxIO7 VDD net1 V_out_perceptron VSS io_secondary_5p0
-x1 VDD net2 net3 net4 net1 net5 net6 net7 VSS perceptron_core
+** sch_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/tb_realistic_perceptron_core.sch
+.subckt tb_realistic_perceptron_core
+
+V_SUPPLY net7 0 3.3
+V_Shift net1 0 3.3
+Cs1 net5 0 70p
+Cs2 net3 0 70p
+Cl net7 0 50p
+Rl net7 0 1M
+I_X1 net3 0 25u
+I_X2 net5 0 25u
+V_W1 net2 0 1.85
+V_W2 net6 0 1.65
+V_B net4 0 1.65
+x1 net7 net1 net2 net3 V_out_perceptron net4 net5 net6 0 perceptron_core
+**** begin user architecture code
+
+
+.control
+  * --- start from neutral ---
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X1 = 0
+  alter I_X2 = 0
+
+  * === Transient Analysis ===
+  * Applying a 50uA pulse to I_X1 to observe step response and settling
+  alter @I_X1[pulse] = [ 0 50u 1u 10n 10n 10u 20u ]
+  alter I_X2 = 0
+  alter V_W1 = 1.85
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  tran 10n 30u
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_tran_perceptron.txt v(V_out_perceptron)
+  alter @I_X1[pulse] = [ 0 0 0 0 0 0 0 ] $ Clear pulse after tran
+
+  * === AC Analysis (Stability & Bandwidth) ===
+  * Injecting AC signal into I_X1
+  alter I_X1 = 25u
+  alter @I_X1[acmag] = 1
+  alter V_W1 = 1.85
+  ac dec 20 1 1G
+  * wrdata exports real and imaginary parts for AC.
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_ac_perceptron.txt v(V_out_perceptron)
+  alter @I_X1[acmag] = 0 $ Clear AC magnitude
+  alter I_X1 = 0
+
+  * === Return to global environment before loops ===
+  reset
+  setplot const
+
+  * === Graph 1: Weight sweep (inhibitory / neutral / excitatory) ===
+  alter I_X2 = 0
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 2
+    let vw1 = 1.45 + n * 0.2
+    alter V_W1 = vw1
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph1_weights.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+
+  * === Graph 2: Sensor 1 sweep, Sensor 2 interference ===
+  alter V_W1 = 1.85
+  alter V_W2 = 1.85
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 2
+    let ix2 = n * 25u
+    alter I_X2 = ix2
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph2_sensors.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter I_X2 = 0
+
+  * === Graph 3: Bias shifting ===
+  alter I_X2 = 0
+  alter V_W1 = 1.85
+  let n = 0
+  dowhile n <= 2
+    let vb = 1.45 + n * 0.2
+    alter V_B = vb
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph3_bias.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_B  = 1.65
+
+  * === Graph 4: V_Shift sweep (reference-rail sensitivity / corner check) ===
+  alter I_X2 = 0
+  alter V_W1 = 1.85
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 5
+    let vshift = 3.25 + n * 0.02
+    alter V_Shift = vshift
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_perceptron_graph4_vshift.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_Shift = 3.3
+  alter V_W1 = 1.65
+
+  * === 3D Dataset A: I_X1 x I_X2 -> V_out ===
+  alter V_W1 = 1.85
+  alter V_W2 = 1.85
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 25
+    let ix2b = n * 2u
+    alter I_X2 = ix2b
+    dc I_X1 0 50u 1u
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_3d_sensors.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter I_X2 = 0
+
+  * === 3D Dataset B: V_W1 x V_W2 -> V_out ===
+  alter I_X1 = 50u
+  alter I_X2 = 50u
+  alter V_B  = 1.65
+  let n = 0
+  dowhile n <= 20
+    let vw2 = 1.45 + n * 0.02
+    alter V_W2 = vw2
+    dc V_W1 1.45 1.85 0.01
+    wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_3d_weights.txt v(V_out_perceptron)
+    set appendwrite
+    let n = n + 1
+  end
+  unset appendwrite
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X1 = 0
+  alter I_X2 = 0
+
+  * === OP-SWEEP DIAGNOSTIC: all devices ===
+  alter V_W1 = 1.85
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X2 = 0
+  save all @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
+  dc I_X1 0 50u 1u
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_opsweep_perceptron_chain.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
+  alter V_W1 = 1.65
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X1 = 0
+  alter I_X2 = 0
+
+  * === OP-SWEEP DIAGNOSTIC #2: all devices, I_X2 swept ===
+  alter V_W1 = 1.85
+  alter V_W2 = 1.65
+  alter V_B  = 1.65
+  alter I_X1 = 25u
+  save all @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
+  dc I_X2 0 50u 1u
+  wrdata /foss/designs/analog-perceptron-gf180mcu/plots/real_opsweep_perceptron_chain_ix2.txt v(V_out_perceptron) @m.x1.x1.xm1.m0[vgs] @m.x1.x1.xm1.m0[vth] @m.x1.x1.xm1.m0[id] @m.x1.x2.xm1.m0[vgs] @m.x1.x2.xm1.m0[vth] @m.x1.x2.xm1.m0[id] @m.x1.x_g1.xm7.m0[vgs] @m.x1.x_g1.xm7.m0[vth] @m.x1.x_g1.xm7.m0[id] @m.x1.x_g2.xm7.m0[vgs] @m.x1.x_g2.xm7.m0[vth] @m.x1.x_g2.xm7.m0[id] @m.x1.x_g3.xm7.m0[vgs] @m.x1.x_g3.xm7.m0[vth] @m.x1.x_g3.xm7.m0[id] @m.x1.x_tanh.xm1.m0[vgs] @m.x1.x_tanh.xm1.m0[vth] @m.x1.x_tanh.xm1.m0[id] @m.x1.x_tanh.xm2.m0[vgs] @m.x1.x_tanh.xm2.m0[vth] @m.x1.x_tanh.xm2.m0[id]
+.endc
+
+
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+* .lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_statistical
+.temp 27
+
+**** end user architecture code
 .ends
-
-* expanding   symbol:  analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym # of pins=4
-** sym_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sym
-** sch_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/io_secondary_5p0.sch
-.subckt io_secondary_5p0 VDD to_gate ASIG5V VSS
-
-
-*.PININFO VSS:B VDD:B to_gate:B ASIG5V:B
-D1 to_gate VDD diode_pd2nw_06v0 area='10u * 10u ' pj='2*10u + 2*10u ' m=4
-XR1 to_gate ASIG5V VDD ppolyf_u r_width=40e-6 r_length=10e-6
-D2 VSS to_gate diode_nd2ps_06v0 area='10u * 10u ' pj='2*10u + 2*10u ' m=4
-.ends
-
 
 * expanding   symbol:  analog-perceptron-gf180mcu/lvs/schematics/perceptron_core.sym # of pins=9
 ** sym_path: /foss/designs/analog-perceptron-gf180mcu/lvs/schematics/perceptron_core.sym
