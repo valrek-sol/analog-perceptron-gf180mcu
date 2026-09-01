@@ -5,22 +5,20 @@ V {}
 S {}
 F {}
 E {}
-N 600 -180 740 -180 {lab=0}
-N 440 -180 440 -150 {lab=0}
-N 560 -290 600 -290 {lab=0}
-N 600 -290 600 -180 {lab=0}
-N 20 -180 440 -180 {lab=0}
-N 100 -330 100 -240 {lab=#net1}
-N 100 -330 260 -330 {lab=#net1}
-N 640 -330 640 -240 {lab=#net2}
-N 560 -330 640 -330 {lab=#net2}
-N 560 -350 740 -350 {lab=#net3}
-N 740 -350 740 -240 {lab=#net3}
-N 20 -350 260 -350 {lab=#net4}
-N 20 -350 20 -240 {lab=#net4}
-N 440 -180 600 -180 {lab=0}
-C {analog-perceptron-gf180mcu/schematics/tanh_ota.sym} 410 -320 0 0 {name=x1}
-C {devices/code_shown.sym} 910 -260 0 0 {name=MODELS only_toplevel=true
+N 620 -120 760 -120 {lab=0}
+N 560 -120 560 -90 {lab=0}
+N 140 -120 560 -120 {lab=0}
+N 220 -270 220 -180 {lab=#net1}
+N 220 -270 380 -270 {lab=#net1}
+N 560 -120 620 -120 {lab=0}
+N 140 -320 380 -320 {lab=#net2}
+N 140 -320 140 -180 {lab=#net2}
+N 450 -220 450 -120 {lab=0}
+N 500 -340 660 -340 {lab=#net3}
+N 660 -340 660 -180 {lab=#net3}
+N 760 -360 760 -180 {lab=#net4}
+N 450 -360 760 -360 {lab=#net4}
+C {devices/code_shown.sym} 340 -520 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
@@ -29,7 +27,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 .temp 27
 "}
-C {code.sym} 890 -390 0 0 {name=COMMANDS
+C {code.sym} 180 -530 0 0 {name=COMMANDS
 value="
 .control
   op
@@ -51,9 +49,11 @@ value="
   wrdata /foss/designs/analog-perceptron-gf180mcu/plots/opsweep_tanh_ota.txt v(V_out) @m.x1.xm1.m0[vgs] @m.x1.xm1.m0[vth] @m.x1.xm1.m0[vdsat] @m.x1.xm1.m0[id] @m.x1.xm1.m0[gm] @m.x1.xm1.m0[gds] @m.x1.xm2.m0[vgs] @m.x1.xm2.m0[vth] @m.x1.xm2.m0[vdsat] @m.x1.xm2.m0[id] @m.x1.xm2.m0[gm] @m.x1.xm2.m0[gds] @m.x1.xm3.m0[vgs] @m.x1.xm3.m0[vth] @m.x1.xm3.m0[vdsat] @m.x1.xm3.m0[id] @m.x1.xm3.m0[gm] @m.x1.xm3.m0[gds] @m.x1.xm4.m0[vgs] @m.x1.xm4.m0[vth] @m.x1.xm4.m0[vdsat] @m.x1.xm4.m0[id] @m.x1.xm4.m0[gm] @m.x1.xm4.m0[gds] @m.x1.xm5.m0[vgs] @m.x1.xm5.m0[vth] @m.x1.xm5.m0[vdsat] @m.x1.xm5.m0[id] @m.x1.xm5.m0[gm] @m.x1.xm5.m0[gds]
 .endc
 "}
-C {vsource.sym} 640 -210 0 0 {name=V_REF value=1.65 savecurrent=false}
-C {vsource.sym} 740 -210 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
-C {gnd.sym} 440 -150 0 0 {name=l1 lab=0}
-C {vsource.sym} 100 -210 0 0 {name=V_IN_N value=2.3 savecurrent=false}
-C {vsource.sym} 20 -210 0 0 {name=V_IN_P value=2.3 savecurrent=false}
-C {lab_pin.sym} 560 -310 0 1 {name=p1 sig_type=std_logic lab=V_out}
+C {vsource.sym} 660 -150 0 0 {name=V_REF value=1.65 savecurrent=false}
+C {vsource.sym} 760 -150 0 0 {name=V_SUPPLY value=3.3 savecurrent=false}
+C {gnd.sym} 560 -90 0 0 {name=l1 lab=0}
+C {vsource.sym} 220 -150 0 0 {name=V_IN_N value=2.3 savecurrent=false}
+C {vsource.sym} 140 -150 0 0 {name=V_IN_P value=2.3 savecurrent=false}
+C {lab_pin.sym} 570 -300 0 1 {name=p1 sig_type=std_logic lab=V_out}
+C {title.sym} 160 0 0 0 {name=l2 author="Guru Charan"}
+C {analog-perceptron-gf180mcu/lvs/schematics/tanh_ota.sym} 450 -300 0 0 {name=x1}

@@ -5,14 +5,16 @@ V {}
 S {}
 F {}
 E {}
-N 480 -220 660 -220 {lab=#net1}
-N 480 -140 720 -140 {lab=0}
 N 720 -220 720 -140 {lab=0}
-N 480 -180 600 -200 {lab=V_1_25}
-C {analog-perceptron-gf180mcu/schematics/voltage_reference.sym} 330 -180 0 0 {name=x1}
-C {vsource.sym} 690 -220 3 0 {name=V1 value=3.3 savecurrent=false}
+N 350 -140 720 -140 {lab=0}
+N 500 -230 650 -230 {lab=V_1_25}
+N 650 -230 650 -200 {lab=V_1_25}
+N 720 -340 720 -280 {lab=#net1}
+N 350 -340 350 -330 {lab=#net1}
+N 350 -340 720 -340 {lab=#net1}
+C {vsource.sym} 720 -250 0 0 {name=V1 value=3.3 savecurrent=false}
 C {gnd.sym} 720 -140 0 0 {name=l1 lab=0}
-C {devices/code_shown.sym} 820 -140 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} 390 -540 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
@@ -21,7 +23,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_statistical
 .temp 27
 "}
-C {code_shown.sym} 820 -470 0 0 {name=COMMANDS
+C {code.sym} 220 -530 0 0 {name=COMMANDS
 value="
 .control
   op
@@ -32,7 +34,9 @@ value="
   print v(V_1_65) v(V_1_25) v(V_1_15)
 .endc
 "}
-C {lab_pin.sym} 480 -160 2 0 {name=p1 sig_type=std_logic lab=V_1_15}
-C {lab_pin.sym} 480 -200 2 0 {name=p2 sig_type=std_logic lab=V_1_65}
-C {lab_pin.sym} 480 -180 2 0 {name=p3 sig_type=std_logic lab=V_1_25}
-C {isource.sym} 600 -170 0 0 {name=I0 value=100u}
+C {lab_pin.sym} 500 -210 2 0 {name=p1 sig_type=std_logic lab=V_1_15}
+C {lab_pin.sym} 500 -250 2 0 {name=p2 sig_type=std_logic lab=V_1_65}
+C {lab_pin.sym} 500 -230 2 0 {name=p3 sig_type=std_logic lab=V_1_25}
+C {isource.sym} 650 -170 0 0 {name=I0 value=100u}
+C {title.sym} 160 0 0 0 {name=l2 author="Guru Charan"}
+C {analog-perceptron-gf180mcu/lvs/schematics/voltage_reference.sym} 370 -230 0 0 {name=x1}
