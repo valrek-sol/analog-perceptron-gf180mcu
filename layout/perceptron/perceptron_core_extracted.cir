@@ -1,4 +1,4 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 01/09/2026 21:04
+* Extracted by KLayout with GF180MCU LVS runset on : 03/09/2026 07:52
 
 .SUBCKT perceptron_core V_w2 I_x2 V_b I_x1 V_out_perceptron VDD V_w1 V_shift VSS
 X$1 \$3 \$10 \$6 \$3 V_w2 \$4 \$5 VSS gilbert_multiplier_current
