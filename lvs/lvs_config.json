@@ -21,7 +21,7 @@
 		""
 	],
 	"LVS_SPICE_FILES": [
-		""
+		"$UPRJ_ROOT/lvs/spice/perceptron.spice"
 	],
 	"LVS_VERILOG_FILES": [
 		""
