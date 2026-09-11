@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>GF180 ANTENNA DRC Run Report at</description>
- <original-file>/foss/designs/analog-perceptron-gf180mcu/gds/perceptron.gds</original-file>
+ <original-file>/foss/designs/analog-perceptron-gf180mcu/gds/secondary_ESD_m2.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/tech/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>perceptron</top-cell>
+ <top-cell>io_secondary_5p0</top-cell>
  <tags>
  </tags>
  <categories>
@@ -19,65 +19,10 @@
    <categories>
    </categories>
   </category>
-  <category>
-   <name>ANT.16_i_ANT.2</name>
-   <description>ANT.16_i_ANT.2: Maximum ratio of Metal1 perimeter
-                   area to related thin gate oxide area: 400</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.9</name>
-   <description>ANT.16_i_ANT.9: Maximum ratio of Via1 area to related thin gate oxide area: 20</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.3</name>
-   <description>ANT.16_i_ANT.3: Maximum ratio of Metal2 perimeter area to related gate oxide area: 400</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.10</name>
-   <description>ANT.16_i_ANT.10: Maximum ratio of Via2 area to related thin gate oxide area: 20</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.4</name>
-   <description>ANT.16_i_ANT.4: Maximum ratio of Metal3 perimeter area to related thin gate oxide area: 400</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.11</name>
-   <description>ANT.16_i_ANT.11: Maximum ratio of Via3 area to related thin gate oxide area: 20</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.5</name>
-   <description>ANT.16_i_ANT.5: Maximum ratio of Metal4 perimeter area to related gate oxide area: 400</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.12</name>
-   <description>ANT.16_i_ANT.12: Maximum ratio of Via4 area to related thin gate oxide area: 20</description>
-   <categories>
-   </categories>
-  </category>
-  <category>
-   <name>ANT.16_i_ANT.7</name>
-   <description>ANT.16_i_ANT.7: Maximum ratio of Metaltop perimeter area to related thin gate oxide area: 400</description>
-   <categories>
-   </categories>
-  </category>
  </categories>
  <cells>
   <cell>
-   <name>perceptron</name>
+   <name>io_secondary_5p0</name>
    <variant/>
    <layout-name/>
    <references>
