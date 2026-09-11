@@ -1,7 +1,7 @@
 # Programmable Analog Perceptron
 
-(this repo is in WIP state - Layout information needs to be added in readmes..)
-
+(this repo is in WIP state - (more) information needs to be added in internal readmes..)
+(however, the code, the work, the files which matter are all done.)
 ## Goal
 
 This project is made by utilizing GF180mcu PDK, for the 2026 SSCS PICO Chipathon. Objective primarily is to learn, and tapeout if possible.
@@ -12,8 +12,11 @@ This project is made by utilizing GF180mcu PDK, for the 2026 SSCS PICO Chipathon
 
 A single perceptron in the analog (continuous time) domain, where its weights and biases are programmable. Intended operation is in DC mode, and sensor agnostic as long as it is a current mode sensor. Designed with photodiodes in mind. Basically analog computation, where the computation performed is :
 
-
-![perceptron equation](docs/images/perceptron_eqn_no_alpha.png "Perceptron Equation")
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/black_perceptron_eqn_no_alpha.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/perceptron_eqn_no_alpha.png">
+  <img src="docs/images/perceptron_eqn_no_alpha.png" alt="perceptron equation" title="Perceptron Equation">
+</picture>
 
 Where,
 
@@ -22,14 +25,22 @@ Where,
 * W1, W2 are input weights (voltages) <- “Programmable”
 * B is the bias (voltage)
 * Y is the output voltage
-
-![perceptron sketch](docs/images/perceptron_sketch.png "Sketch of model of a perceptron neuron")
+* 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/black_perceptron_sketch.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/perceptron_sketch.png">
+  <img src="docs/images/perceptron_sketch.png" alt="perceptron sketch" title="Sketch of model of a perceptron neuron">
+</picture>
 
 Highlight is that there is no digital, memory elements. The calculation happens as fast it can. As in, the time taken, intuitively, is the time taken for an input impulse to form a respective output impulse response. All while maintaining the full "analog" resolution. In contrast, a typical digital circuit would take a MAC operation(s) with a delay to perform it, and would be limited to the precision it has. Not to mention the involvment of ADC, DAC in such a digital circuit, causing overhead.
 
 ### High level block details
 
-![perceptron diagram](docs/images/perceptron_block_diagram.png "Block diagram of the perceptron implemented")
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/black_perceptron_block_diagram.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/perceptron_block_diagram.png">
+  <img src="docs/images/perceptron_block_diagram.png" alt="perceptron diagram" title="Block diagram of the perceptron implemented">
+</picture>
 
 * Transimpedance amplifier (TIA) (x2) converts sensor currents to voltage. (I → V)
 * An array of Gilbert multipliers (x3) multiplies those voltages with the weights. Outputs current (V→I) 
@@ -72,7 +83,11 @@ Main overview of the structure of this repository
 
 ### Perceptron Core Chip (Excludes ESD)
 
-![perceptron gds](layout/visual/perceptron_core.png "Perceptron Layout")
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="layout/visual/black_perceptron_core.png">
+  <source media="(prefers-color-scheme: light)" srcset="layout/visual/perceptron_core.png">
+  <img src="layout/visual/perceptron_core.png" alt="perceptron gds" title="Perceptron Layout">
+</picture>
 
 Area : 135.81 x 138.87 (Width x Height) 
 
@@ -87,7 +102,11 @@ XCDDCCDDCX
 
 XBAABBAABX
 ```
-![Common_Centroid_GDS](layout/visual/gilbert_multiplier_current_detail.png "Common Centroid")
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="layout/visual/black_gilbert_multiplier_current_detail.png">
+  <source media="(prefers-color-scheme: light)" srcset="layout/visual/gilbert_multiplier_current_detail.png">
+  <img src="layout/visual/gilbert_multiplier_current_detail.png" alt="Common_Centroid_GDS" title="Common Centroid">
+</picture>
 
 ## Chipathon Documents & Related
 
