@@ -57,14 +57,14 @@ Main overview of the structure of this repository
 * [`layout/`](layout/): Contains Layout (gds) files from klayout
   * [`layout/visual/`](layout/visual/): Contains images of the layout
 * [`lvs/`](lvs/):
-  * [`lvs/lvs_config.json`]('lvs/lvs_config.json'): lvs configuration for chipathon integration
-  * [`lvs/schematics/`]('lvs/schematics/'): xschem schematics with dummy transistors for lvs
-  * [`lvs/spice/`]('lvs/spice/'): xschem generated netlist of sch, for lvs in klayout.
+  * [`lvs/lvs_config.json`](lvs/lvs_config.json): lvs configuration for chipathon integration
+  * [`lvs/schematics/`](lvs/schematics/): xschem schematics with dummy transistors for lvs
+  * [`lvs/spice/`](lvs/spice/): xschem generated netlist of sch, for lvs in klayout.
 * [`plots/`](plots/): Simulation sweep data and generated figures
    * [`plots/plot_results.py`](plots/plot_results.py): Script that generates all figures from sweep data
    * `plots/*.txt`: Raw ngspice sweep outputs (which are parsed by matplotlib)
    * [`plots/plots_generated/`](plots/plots_generated/): Plots generated from xschem via matplotlib (python)
-   * [`plots/plots_real_generated/`](plots/plots_real_generated/): Plots generated from xschem via matplotlib (python), using realistic tb.
+   * [`plots/plots_generated_real/`](plots/plots_generated_real/): Plots generated from xschem via matplotlib (python), using realistic tb.
    * [`plots/opsweep_generated/`](plots/opsweep_generated/): Op-sweep Plots generated from xschem via matplotlib (python).
 * [`schematics/`](schematics/): Xschem sources and testbenches for all blocks
    * [`schematics/cg_amp_tia.sch`](schematics/cg_amp_tia.sch): CG-amp shunt-feedback TIA
