@@ -12,35 +12,32 @@
 # Project metadata (used for documentation / review)
 # ======================================================
 project:
-  title: "Programmable Analog Perceptron"             # Project title (e.g. "Simple CPU", "PLL", "ADC")
-  team: "[B12] Electron Ensemble"                      # Your Team name
-  discord: "valrek-sol"                   # Optional: Discord username (for support / communication)
-  description: "A sensor agnostic fully analog single neuron perceptron"  # Short one-line description
+  title: "Programmable Analog Perceptron"
+  team: "[B12] Electron Ensemble"
+  discord: "valrek-sol"
+  description: "A sensor agnostic fully analog single neuron perceptron"
   lvs_config: "lvs/lvs_config.json"
+  gf_def_ready: true
+  ws_def_ready: false
+  drc_ready: true
+  lvs_ready: true
 
 pins: 
   - name: VSS
     io_type: ground
   - name: V_w2
     io_type: analog
-    secondary_esd: true
   - name: I_x2
     io_type: analog
-    secondary_esd: true
   - name: V_b
     io_type: analog
-    secondary_esd: true
   - name: I_x1
     io_type: analog
-    secondary_esd: true
   - name: V_w1
     io_type: analog
-    secondary_esd: true
   - name: V_shift
     io_type: analog
-    secondary_esd: true
   - name: V_out_perceptron 
     io_type: analog
-    secondary_esd: true
   - name: VDD
     io_type: power
