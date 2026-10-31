@@ -115,6 +115,7 @@ XBAABBAABX
 - [Google Drive containing all below material](https://drive.google.com/drive/folders/1w9kNC-WTRVOlu-ZDq20NobVmB2Sa7vTh?usp=sharing)
 - [Pin Requirement Link](https://docs.google.com/spreadsheets/d/1j0dq9UvAsj5zYBimwCMxk5xVtT9jLV9aKmREzxfqWbw/edit?usp=drive_link)
 - [Progress tracker Link](https://docs.google.com/spreadsheets/d/1hsH6fOqgu6h7McnxBpZjmTYU_prxYtLpsWHi7i9b4Zk/edit?usp=sharing) 
+- [Test Plan Link](https://github.com/valrek-sol/analog-perceptron-gf180mcu/blob/main/docs/test_plan.md)
 
 ### Proposal
 - [Proposal Slide Link](https://docs.google.com/presentation/d/13eMg_GNvv0nm00do740fxi4ZR1RHCYNasZUUlCRyxGo/edit?usp=sharing)
