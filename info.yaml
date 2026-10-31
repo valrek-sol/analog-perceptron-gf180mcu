@@ -18,7 +18,7 @@ project:
   description: "A sensor agnostic fully analog single neuron perceptron"
   lvs_config: "lvs/lvs_config.json"
   gf_def_ready: true
-  ws_def_ready: false
+  ws_def_ready: true
   drc_ready: true
   lvs_ready: true
   export_control: "docs/Export_Control_GF_Rev8.2.docx"
