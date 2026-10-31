@@ -1,0 +1,13 @@
+QStandardPaths: runtime directory '/tmp/runtime-default' is not owned by UID 1000, but a directory permissions 0777 owned by UID 0 GID 0
+[skip] cg_amp_tia_sweep.txt not found , please run the matching .control block first.
+[skip] gilbert_single_sweep.txt not found , please run the matching .control block first.
+[skip] gilbert_family_sweep.txt not found , please run the matching .control block first.
+[skip] tanh_ota_sweep.txt not found , please run the matching .control block first.
+[ok] 05_perceptron_weights.png
+[ok] 06_perceptron_sensors.png
+[ok] 07_perceptron_bias.png
+[ok] 10_perceptron_vshift.png
+[ok] 08_perceptron_3d_sensors.png
+[ok] 09_perceptron_3d_weights.png
+
+Done. Plots saved in /foss/designs/analog-perceptron-gf180mcu/pex/out/sim/tb_perceptron_sch/plots/plots_generated

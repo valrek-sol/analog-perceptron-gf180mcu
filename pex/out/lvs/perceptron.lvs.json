@@ -1,0 +1,356 @@
+[
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3"
+      ], [
+        "1",
+        "2",
+        "3"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "voltage_reference",
+      "voltage_reference"
+   ],
+   "devices": [
+       [
+         ["nfet_03v3", 18],
+         ["pfet_03v3", 13],
+         ["ppolyf_u_1k", 8 ]
+       ], [
+         ["nfet_03v3", 18 ],
+         ["pfet_03v3", 13 ],
+         ["ppolyf_u_1k", 8 ]
+       ]
+   ],
+   "nets": [
+    18,
+    18
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "v_1_15",
+        "v_1_25",
+        "v_1_65",
+        "VDD",
+        "VSS"
+      ], [
+        "v_1_15",
+        "v_1_25",
+        "v_1_65",
+        "VDD",
+        "VSS"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "gilbert_multiplier_current",
+      "gilbert_multiplier_current"
+   ],
+   "devices": [
+       [
+         ["nfet_03v3", 13],
+         ["ppolyf_u_1k", 1 ]
+       ], [
+         ["nfet_03v3", 13 ],
+         ["ppolyf_u_1k", 1 ]
+       ]
+   ],
+   "nets": [
+    12,
+    12
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "V_x_p",
+        "V_x_n",
+        "VSS",
+        "V_w_p",
+        "V_w_n",
+        "V_tail",
+        "I_o_n",
+        "I_o_p"
+      ], [
+        "V_x_p",
+        "V_x_n",
+        "VSS",
+        "V_w_p",
+        "V_w_n",
+        "V_tail",
+        "I_o_n",
+        "I_o_p"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "tanh_ota",
+      "tanh_ota"
+   ],
+   "devices": [
+       [
+         ["pfet_03v3", 3],
+         ["nfet_03v3", 6],
+         ["ppolyf_u_1k", 2 ]
+       ], [
+         ["pfet_03v3", 3 ],
+         ["nfet_03v3", 6 ],
+         ["ppolyf_u_1k", 2 ]
+       ]
+   ],
+   "nets": [
+    9,
+    9
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "V_in_p",
+        "V_in_n",
+        "V_ref",
+        "V_out",
+        "VSS",
+        "VDD"
+      ], [
+        "V_in_p",
+        "V_in_n",
+        "V_ref",
+        "V_out",
+        "VSS",
+        "VDD"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "cg_amp_tia",
+      "cg_amp_tia"
+   ],
+   "devices": [
+       [
+         ["nfet_03v3", 1],
+         ["ppolyf_u_1k", 1 ]
+       ], [
+         ["nfet_03v3", 1 ],
+         ["ppolyf_u_1k", 1 ]
+       ]
+   ],
+   "nets": [
+    4,
+    4
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "I_in",
+        "V_out",
+        "V_ref",
+        "VSS"
+      ], [
+        "I_in",
+        "V_out",
+        "V_ref",
+        "VSS"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3"
+      ], [
+        "1",
+        "2",
+        "3"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "perceptron_core",
+      "perceptron_core"
+   ],
+   "devices": [
+       [
+         ["voltage_reference", 1],
+         ["gilbert_multiplier_current", 3],
+         ["tanh_ota", 1],
+         ["cg_amp_tia", 2],
+         ["ppolyf_u_1k", 2 ]
+       ], [
+         ["voltage_reference", 1 ],
+         ["gilbert_multiplier_current", 3 ],
+         ["tanh_ota", 1 ],
+         ["cg_amp_tia", 2 ],
+         ["ppolyf_u_1k", 2 ]
+       ]
+   ],
+   "nets": [
+    16,
+    16
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "V_shift",
+        "I_x1",
+        "I_x2",
+        "V_w1",
+        "V_w2",
+        "V_b",
+        "V_out_perceptron",
+        "VDD",
+        "VSS"
+      ], [
+        "V_shift",
+        "I_x1",
+        "I_x2",
+        "V_w1",
+        "V_w2",
+        "V_b",
+        "V_out_perceptron",
+        "VDD",
+        "VSS"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "io_secondary_5p0",
+      "io_secondary_5p0"
+   ],
+   "devices": [
+       [
+         ["diode_nd2ps_06v0", 1],
+         ["diode_pd2nw_06v0", 1],
+         ["ppolyf_u", 1 ]
+       ], [
+         ["diode_nd2ps_06v0", 1 ],
+         ["diode_pd2nw_06v0", 1 ],
+         ["ppolyf_u", 1 ]
+       ]
+   ],
+   "nets": [
+    4,
+    4
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "VDD",
+        "to_gate",
+        "ASIG5V",
+        "VSS"
+      ], [
+        "VDD",
+        "to_gate",
+        "ASIG5V",
+        "VSS"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "perceptron",
+      "perceptron"
+   ],
+   "devices": [
+       [
+         ["perceptron_core", 1],
+         ["io_secondary_5p0", 7 ]
+       ], [
+         ["perceptron_core", 1 ],
+         ["io_secondary_5p0", 7 ]
+       ]
+   ],
+   "nets": [
+    16,
+    16
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "V_out_perceptron",
+        "V_w2",
+        "V_b",
+        "V_shift",
+        "V_w1",
+        "I_x2",
+        "I_x1",
+        "VDD",
+        "VSS"
+      ], [
+        "V_out_perceptron",
+        "V_w2",
+        "V_b",
+        "V_shift",
+        "V_w1",
+        "I_x2",
+        "I_x1",
+        "VDD",
+        "VSS"
+      ]
+   ]
+  }
+]

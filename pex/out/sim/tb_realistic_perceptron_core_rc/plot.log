@@ -1,0 +1,11 @@
+QStandardPaths: runtime directory '/tmp/runtime-default' is not owned by UID 1000, but a directory permissions 0777 owned by UID 0 GID 0
+[ok] 01_real_tran_response.png
+[ok] 02_real_ac_response.png
+[ok] 03_real_perceptron_weights.png
+[ok] 04_real_perceptron_sensors.png
+[ok] 05_real_perceptron_bias.png
+[ok] 06_real_perceptron_vshift.png
+[ok] 07_real_3d_sensors.png
+[ok] 08_real_3d_weights.png
+
+Done. Plots saved in /foss/designs/analog-perceptron-gf180mcu/pex/out/sim/tb_realistic_perceptron_core_rc/plots/plots_generated_real

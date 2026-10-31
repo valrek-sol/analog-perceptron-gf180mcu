@@ -1,0 +1,8 @@
+* NGSPICE file created from cg_amp_tia.ext - technology: gf180mcuD
+
+.subckt cg_amp_tia V_out V_ref I_in VSS
+X0 V_out V_ref I_in VSS nfet_03v3 ad=0.65p pd=3.02u as=1.525p ps=6.22u w=2.5u l=0.5u
+X1 I_in V_ref V_out VSS nfet_03v3 ad=1.525p pd=6.22u as=0.65p ps=3.02u w=2.5u l=0.5u
+X2 V_out V_ref VSS ppolyf_u_1k r_width=3u r_length=8.1u
+.ends
+

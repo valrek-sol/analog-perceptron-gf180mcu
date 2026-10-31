@@ -1,0 +1,63 @@
+* NGSPICE file created from gilbert_multiplier_current.ext - technology: gf180mcuD
+
+.subckt gilbert_multiplier_current VSS V_tail V_x_p V_x_n V_w_n V_w_p I_o_p I_o_n
+X0 I_o_p V_w_p a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X1 a_2162_8114# V_w_p I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X2 a_2799_3944# V_x_n a_2162_8114# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X3 a_2162_8114# V_w_n I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X4 I_o_p V_w_n a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X5 a_2799_3944# V_tail VSS VSS nfet_03v3 ad=1.04p pd=4.52u as=1.04p ps=4.52u w=4u l=1u
+X6 I_o_n VSS VSS VSS nfet_03v3 ad=0.65p pd=3.02u as=1.525p ps=6.22u w=2.5u l=0.5u
+X7 I_o_n V_w_p a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X8 I_o_p VSS VSS VSS nfet_03v3 ad=0.65p pd=3.02u as=1.525p ps=6.22u w=2.5u l=0.5u
+X9 a_1958_5664# V_w_p I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X10 a_1958_5664# VSS VSS VSS nfet_03v3 ad=1.3p pd=5.52u as=3.05p ps=11.22u w=5u l=0.5u
+X11 a_1958_5664# V_w_n I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X12 a_2162_8114# V_w_n I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X13 a_2162_8114# V_w_p I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X14 VSS VSS I_o_n VSS nfet_03v3 ad=1.525p pd=6.22u as=0.65p ps=3.02u w=2.5u l=0.5u
+X15 I_o_p VSS VSS VSS nfet_03v3 ad=0.65p pd=3.02u as=1.525p ps=6.22u w=2.5u l=0.5u
+X16 a_1260_2906# V_x_p a_1958_5664# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X17 a_1260_2906# VSS VSS VSS nfet_03v3 ad=1.04p pd=4.52u as=2.44p ps=9.22u w=4u l=1u
+X18 VSS VSS a_2162_8114# VSS nfet_03v3 ad=3.05p pd=11.22u as=1.3p ps=5.52u w=5u l=0.5u
+X19 VSS VSS I_o_p VSS nfet_03v3 ad=1.525p pd=6.22u as=0.65p ps=3.02u w=2.5u l=0.5u
+X20 a_1260_2906# a_1260_468# VSS ppolyf_u_1k r_width=3u r_length=11.55u
+X21 I_o_n VSS VSS VSS nfet_03v3 ad=0.65p pd=3.02u as=1.525p ps=6.22u w=2.5u l=0.5u
+X22 a_1958_5664# V_w_n I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X23 VSS V_tail a_2799_3944# VSS nfet_03v3 ad=1.04p pd=4.52u as=1.04p ps=4.52u w=4u l=1u
+X24 a_1958_5664# V_w_p I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X25 VSS VSS I_o_p VSS nfet_03v3 ad=1.525p pd=6.22u as=0.65p ps=3.02u w=2.5u l=0.5u
+X26 a_2162_8114# V_w_p I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X27 a_2162_8114# V_w_n I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X28 VSS VSS a_1260_2906# VSS nfet_03v3 ad=2.44p pd=9.22u as=1.04p ps=4.52u w=4u l=1u
+X29 VSS VSS I_o_n VSS nfet_03v3 ad=1.525p pd=6.22u as=0.65p ps=3.02u w=2.5u l=0.5u
+X30 a_2162_8114# V_w_p I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X31 VSS VSS a_1958_5664# VSS nfet_03v3 ad=3.05p pd=11.22u as=1.3p ps=5.52u w=5u l=0.5u
+X32 a_2162_8114# V_w_n I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X33 I_o_p V_w_p a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X34 I_o_n V_w_n a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X35 a_1958_5664# V_w_n I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X36 a_2162_8114# VSS VSS VSS nfet_03v3 ad=1.3p pd=5.52u as=3.05p ps=11.22u w=5u l=0.5u
+X37 a_1958_5664# V_w_p I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X38 a_1958_5664# V_w_p I_o_n VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X39 a_2104_2906# a_1260_468# VSS ppolyf_u_1k r_width=3u r_length=11.55u
+X40 a_1958_5664# V_w_n I_o_p VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X41 I_o_n V_w_p a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X42 I_o_p V_w_p a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X43 I_o_p V_w_n a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X44 a_1958_5664# V_x_p a_1260_2906# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X45 I_o_n V_w_n a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X46 I_o_n V_w_n a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X47 a_2162_8114# V_x_n a_2799_3944# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X48 I_o_p V_w_p a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X49 I_o_n V_w_p a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X50 VSS V_tail a_1260_2906# VSS nfet_03v3 ad=1.04p pd=4.52u as=1.04p ps=4.52u w=4u l=1u
+X51 I_o_p V_w_n a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X52 I_o_p V_w_n a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X53 a_2104_2906# a_2948_468# VSS ppolyf_u_1k r_width=3u r_length=11.55u
+X54 a_2799_3944# a_2948_468# VSS ppolyf_u_1k r_width=3u r_length=11.55u
+X55 I_o_n V_w_n a_2162_8114# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+X56 a_1260_2906# V_tail VSS VSS nfet_03v3 ad=1.04p pd=4.52u as=1.04p ps=4.52u w=4u l=1u
+X57 I_o_n V_w_p a_1958_5664# VSS nfet_03v3 ad=0.65p pd=3.02u as=0.65p ps=3.02u w=2.5u l=0.5u
+.ends
+

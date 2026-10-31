@@ -1,0 +1,245 @@
+
+Circuit 1 cell nfet_03v3 and Circuit 2 cell nfet_03v3 are black boxes.
+Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: nfet_03v3                       |Circuit 2: nfet_03v3                       
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes nfet_03v3 and nfet_03v3 are equivalent.
+
+Circuit 1 cell pfet_03v3 and Circuit 2 cell pfet_03v3 are black boxes.
+Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: pfet_03v3                       |Circuit 2: pfet_03v3                       
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes pfet_03v3 and pfet_03v3 are equivalent.
+
+Circuit 1 cell ppolyf_u_1k and Circuit 2 cell ppolyf_u_1k are black boxes.
+Warning: Equate pins:  cell ppolyf_u_1k is a placeholder, treated as a black box.
+Warning: Equate pins:  cell ppolyf_u_1k is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: ppolyf_u_1k                     |Circuit 2: ppolyf_u_1k                     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes ppolyf_u_1k and ppolyf_u_1k are equivalent.
+
+Class voltage_reference (0):  Merged 55 parallel devices.
+Class voltage_reference (0):  Merged 17 series devices.
+Class voltage_reference (1):  Merged 1 parallel devices.
+Subcircuit summary:
+Circuit 1: voltage_reference               |Circuit 2: voltage_reference               
+-------------------------------------------|-------------------------------------------
+nfet_03v3 (58->18)                         |nfet_03v3 (19->18)                         
+pfet_03v3 (28->13)                         |pfet_03v3 (13)                             
+ppolyf_u_1k (25->8)                        |ppolyf_u_1k (8)                            
+Number of devices: 39                      |Number of devices: 39                      
+Number of nets: 18                         |Number of nets: 18                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: voltage_reference               |Circuit 2: voltage_reference               
+-------------------------------------------|-------------------------------------------
+v_1_15                                     |v_1_15                                     
+v_1_25                                     |v_1_25                                     
+v_1_65                                     |v_1_65                                     
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes voltage_reference and voltage_reference are equivalent.
+
+Class gilbert_multiplier_current (0):  Merged 41 parallel devices.
+Class gilbert_multiplier_current (0):  Merged 3 series devices.
+Class gilbert_multiplier_current (1):  Merged 2 parallel devices.
+Subcircuit summary:
+Circuit 1: gilbert_multiplier_current      |Circuit 2: gilbert_multiplier_current      
+-------------------------------------------|-------------------------------------------
+nfet_03v3 (54->13)                         |nfet_03v3 (15->13)                         
+ppolyf_u_1k (4->1)                         |ppolyf_u_1k (1)                            
+Number of devices: 14                      |Number of devices: 14                      
+Number of nets: 12                         |Number of nets: 12                         
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: gilbert_multiplier_current      |Circuit 2: gilbert_multiplier_current      
+-------------------------------------------|-------------------------------------------
+V_x_p                                      |V_x_p                                      
+V_x_n                                      |V_x_n                                      
+VSS                                        |VSS                                        
+V_w_p                                      |V_w_p                                      
+V_w_n                                      |V_w_n                                      
+V_tail                                     |V_tail                                     
+I_o_n                                      |I_o_n                                      
+I_o_p                                      |I_o_p                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes gilbert_multiplier_current and gilbert_multiplier_current are equivalent.
+
+Class tanh_ota (0):  Merged 31 parallel devices.
+Class tanh_ota (0):  Merged 6 series devices.
+Subcircuit summary:
+Circuit 1: tanh_ota                        |Circuit 2: tanh_ota                        
+-------------------------------------------|-------------------------------------------
+pfet_03v3 (10->3)                          |pfet_03v3 (3)                              
+nfet_03v3 (30->6)                          |nfet_03v3 (6)                              
+ppolyf_u_1k (8->2)                         |ppolyf_u_1k (2)                            
+Number of devices: 11                      |Number of devices: 11                      
+Number of nets: 9                          |Number of nets: 9                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: tanh_ota                        |Circuit 2: tanh_ota                        
+-------------------------------------------|-------------------------------------------
+V_in_p                                     |V_in_p                                     
+V_in_n                                     |V_in_n                                     
+V_ref                                      |V_ref                                      
+V_out                                      |V_out                                      
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes tanh_ota and tanh_ota are equivalent.
+
+Class cg_amp_tia (0):  Merged 1 parallel devices.
+Subcircuit summary:
+Circuit 1: cg_amp_tia                      |Circuit 2: cg_amp_tia                      
+-------------------------------------------|-------------------------------------------
+nfet_03v3 (2->1)                           |nfet_03v3 (1)                              
+ppolyf_u_1k (1)                            |ppolyf_u_1k (1)                            
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: cg_amp_tia                      |Circuit 2: cg_amp_tia                      
+-------------------------------------------|-------------------------------------------
+I_in                                       |I_in                                       
+V_out                                      |V_out                                      
+V_ref                                      |V_ref                                      
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes cg_amp_tia and cg_amp_tia are equivalent.
+
+Circuit 1 cell ppolyf_u and Circuit 2 cell ppolyf_u are black boxes.
+Warning: Equate pins:  cell ppolyf_u is a placeholder, treated as a black box.
+Warning: Equate pins:  cell ppolyf_u is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: ppolyf_u                        |Circuit 2: ppolyf_u                        
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes ppolyf_u and ppolyf_u are equivalent.
+
+Subcircuit summary:
+Circuit 1: perceptron_core                 |Circuit 2: perceptron_core                 
+-------------------------------------------|-------------------------------------------
+voltage_reference (1)                      |voltage_reference (1)                      
+gilbert_multiplier_current (3)             |gilbert_multiplier_current (3)             
+tanh_ota (1)                               |tanh_ota (1)                               
+cg_amp_tia (2)                             |cg_amp_tia (2)                             
+ppolyf_u_1k (2)                            |ppolyf_u_1k (2)                            
+Number of devices: 9                       |Number of devices: 9                       
+Number of nets: 16                         |Number of nets: 16                         
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: perceptron_core                 |Circuit 2: perceptron_core                 
+-------------------------------------------|-------------------------------------------
+V_shift                                    |V_shift                                    
+I_x1                                       |I_x1                                       
+I_x2                                       |I_x2                                       
+V_w1                                       |V_w1                                       
+V_w2                                       |V_w2                                       
+V_b                                        |V_b                                        
+V_out_perceptron                           |V_out_perceptron                           
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes perceptron_core and perceptron_core are equivalent.
+
+Class io_secondary_5p0 (0):  Merged 6 parallel devices.
+Subcircuit summary:
+Circuit 1: io_secondary_5p0                |Circuit 2: io_secondary_5p0                
+-------------------------------------------|-------------------------------------------
+diode_nd2ps_06v0 (4->1)                    |diode_nd2ps_06v0 (4->1)                    
+diode_pd2nw_06v0 (4->1)                    |diode_pd2nw_06v0 (4->1)                    
+ppolyf_u (1)                               |ppolyf_u (1)                               
+Number of devices: 3                       |Number of devices: 3                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: io_secondary_5p0                |Circuit 2: io_secondary_5p0                
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+to_gate                                    |to_gate                                    
+ASIG5V                                     |ASIG5V                                     
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes io_secondary_5p0 and io_secondary_5p0 are equivalent.
+
+Subcircuit summary:
+Circuit 1: perceptron                      |Circuit 2: perceptron                      
+-------------------------------------------|-------------------------------------------
+perceptron_core (1)                        |perceptron_core (1)                        
+io_secondary_5p0 (7)                       |io_secondary_5p0 (7)                       
+Number of devices: 8                       |Number of devices: 8                       
+Number of nets: 16                         |Number of nets: 16                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: perceptron                      |Circuit 2: perceptron                      
+-------------------------------------------|-------------------------------------------
+V_out_perceptron                           |V_out_perceptron                           
+V_w2                                       |V_w2                                       
+V_b                                        |V_b                                        
+V_shift                                    |V_shift                                    
+V_w1                                       |V_w1                                       
+I_x2                                       |I_x2                                       
+I_x1                                       |I_x1                                       
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes perceptron and perceptron are equivalent.
+
+Final result: Circuits match uniquely.
+.

@@ -1,0 +1,53 @@
+* NGSPICE file created from tanh_ota.ext - technology: gf180mcuD
+
+.subckt tanh_ota V_ref VDD VSS V_out V_in_n V_in_p
+X0 VDD a_6626_3940# a_6626_3940# VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X1 a_1466_5327# a_614_799# VSS ppolyf_u_1k r_width=3u r_length=22u
+X2 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X3 a_6626_3940# a_6626_3940# VDD VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X4 V_out V_in_n a_7238_1471# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X5 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X6 a_3170_5327# a_2318_799# VSS ppolyf_u_1k r_width=3u r_length=22u
+X7 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X8 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X9 V_out a_12396_2361# VSS ppolyf_u_1k r_width=3u r_length=15u
+X10 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X11 VDD a_614_799# VSS ppolyf_u_1k r_width=3u r_length=22u
+X12 a_6626_3940# VDD VDD VDD pfet_03v3 ad=1.3p pd=5.52u as=3.25p ps=11.3u w=5u l=0.5u
+X13 a_7238_1471# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X14 V_out a_6626_3940# VDD VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X15 VDD a_6626_3940# V_out VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X16 a_7238_1471# V_in_p a_6626_3940# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X17 a_6626_3940# V_in_p a_7238_1471# VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X18 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X19 VSS a_4022_799# a_7238_1471# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X20 VDD VDD a_6626_3940# VDD pfet_03v3 ad=3.25p pd=11.3u as=1.3p ps=5.52u w=5u l=0.5u
+X21 VSS VSS VSS VSS nfet_03v3 ad=0.915p pd=4.22u as=17.29p ps=79.36u w=1.5u l=0.5u
+X22 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X23 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X24 V_out a_6626_3940# VDD VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X25 a_6626_3940# VSS VSS VSS nfet_03v3 ad=1.3p pd=5.52u as=3.05p ps=11.22u w=5u l=0.5u
+X26 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X27 VDD a_6626_3940# a_6626_3940# VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X28 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X29 a_7238_1471# V_in_n V_out VSS nfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X30 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X31 a_6626_3940# a_6626_3940# VDD VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X32 a_9268_1509# V_ref VSS ppolyf_u_1k r_width=3u r_length=15u
+X33 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X34 a_1466_5327# a_2318_799# VSS ppolyf_u_1k r_width=3u r_length=22u
+X35 a_9268_1509# a_12396_2361# VSS ppolyf_u_1k r_width=3u r_length=15u
+X36 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X37 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X38 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X39 a_3170_5327# a_4022_799# VSS ppolyf_u_1k r_width=3u r_length=22u
+X40 VDD a_6626_3940# V_out VDD pfet_03v3 ad=1.3p pd=5.52u as=1.3p ps=5.52u w=5u l=0.5u
+X41 VSS VSS a_6626_3940# VSS nfet_03v3 ad=3.05p pd=11.22u as=1.3p ps=5.52u w=5u l=0.5u
+X42 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X43 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X44 VSS a_4022_799# a_4022_799# VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X45 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+X46 VSS VSS VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0 ps=0 w=1.5u l=0.5u
+X47 a_4022_799# a_4022_799# VSS VSS nfet_03v3 ad=0.39p pd=2.02u as=0.39p ps=2.02u w=1.5u l=0.5u
+.ends
+

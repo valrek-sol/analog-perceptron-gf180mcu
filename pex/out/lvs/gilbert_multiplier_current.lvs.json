@@ -1,0 +1,74 @@
+[
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3"
+      ], [
+        "1",
+        "2",
+        "3"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "gilbert_multiplier_current",
+      "gilbert_multiplier_current"
+   ],
+   "devices": [
+       [
+         ["nfet_03v3", 13],
+         ["ppolyf_u_1k", 1 ]
+       ], [
+         ["nfet_03v3", 13 ],
+         ["ppolyf_u_1k", 1 ]
+       ]
+   ],
+   "nets": [
+    12,
+    12
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "V_x_p",
+        "V_x_n",
+        "VSS",
+        "V_w_p",
+        "V_w_n",
+        "V_tail",
+        "I_o_n",
+        "I_o_p"
+      ], [
+        "V_x_p",
+        "V_x_n",
+        "VSS",
+        "V_w_p",
+        "V_w_n",
+        "V_tail",
+        "I_o_n",
+        "I_o_p"
+      ]
+   ]
+  }
+]

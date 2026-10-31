@@ -1,0 +1,62 @@
+
+Circuit 1 cell nfet_03v3 and Circuit 2 cell nfet_03v3 are black boxes.
+Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: nfet_03v3                       |Circuit 2: nfet_03v3                       
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes nfet_03v3 and nfet_03v3 are equivalent.
+
+Circuit 1 cell ppolyf_u_1k and Circuit 2 cell ppolyf_u_1k are black boxes.
+Warning: Equate pins:  cell ppolyf_u_1k is a placeholder, treated as a black box.
+Warning: Equate pins:  cell ppolyf_u_1k is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: ppolyf_u_1k                     |Circuit 2: ppolyf_u_1k                     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes ppolyf_u_1k and ppolyf_u_1k are equivalent.
+
+Class gilbert_multiplier_current (0):  Merged 41 parallel devices.
+Class gilbert_multiplier_current (0):  Merged 3 series devices.
+Class gilbert_multiplier_current (1):  Merged 2 parallel devices.
+Subcircuit summary:
+Circuit 1: gilbert_multiplier_current      |Circuit 2: gilbert_multiplier_current      
+-------------------------------------------|-------------------------------------------
+nfet_03v3 (54->13)                         |nfet_03v3 (15->13)                         
+ppolyf_u_1k (4->1)                         |ppolyf_u_1k (1)                            
+Number of devices: 14                      |Number of devices: 14                      
+Number of nets: 12                         |Number of nets: 12                         
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: gilbert_multiplier_current      |Circuit 2: gilbert_multiplier_current      
+-------------------------------------------|-------------------------------------------
+V_x_p                                      |V_x_p                                      
+V_x_n                                      |V_x_n                                      
+VSS                                        |VSS                                        
+V_w_p                                      |V_w_p                                      
+V_w_n                                      |V_w_n                                      
+V_tail                                     |V_tail                                     
+I_o_n                                      |I_o_n                                      
+I_o_p                                      |I_o_p                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes gilbert_multiplier_current and gilbert_multiplier_current are equivalent.
+
+Final result: Circuits match uniquely.
+.
