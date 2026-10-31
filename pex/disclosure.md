@@ -9,7 +9,7 @@ not possible with my other commitments.
 want to learn tcl and python-matplot full power later.
 
 so, just used claude to make a tcl file 
-it did! wonderfully so. i couldnt have done this myself.
+it did! wonderfully so. i couldnt have done this myself. obv supplied initial scripts i made and had to have a small back and forth.
 
 so ai is used in this pex script alone
 
